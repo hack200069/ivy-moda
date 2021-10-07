@@ -156,113 +156,113 @@
                 <ul class="nav navbar-nav navbar_center">
                     <li class="dropdown">
                         <!-- fixed cho sale -->
-                        <a href="https://ivymoda.com/danh-muc/hang-nu-moi-ve" class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false">Nữ</a>
+                        <a href="?controller=category" class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false">Nữ</a>
                         <ul class="dropdown-menu">
-                            <li><a href="https://ivymoda.com/danh-muc/hang-nu-moi-ve">H&agrave;ng nữ mới về</a></li>
-                            <li><a href="https://ivymoda.com/danh-muc/new-secret">New Secret</a></li>
-                            <li><a href="https://ivymoda.com/danh-muc/green-leaf">Green Leaf</a></li>
-                            <li><a href="https://ivymoda.com/danh-muc/thanh-sac">Thanh Sắc</a></li>
+                            <li><a href="?controller=category">H&agrave;ng nữ mới về</a></li>
+                            <li><a href="?controller=category">New Secret</a></li>
+                            <li><a href="?controller=category">Green Leaf</a></li>
+                            <li><a href="?controller=category">Thanh Sắc</a></li>
                             <li>
                                 <a href="#" style="text-transform: uppercase"><b>&Aacute;o</b></a>
                                 <ul>
-                                    <li><a href="https://ivymoda.com/danh-muc/ao-kieu-nu">&Aacute;o kiểu</a></li>
-                                    <li><a href="https://ivymoda.com/danh-muc/ao-croptop">&Aacute;o croptop</a></li>
-                                    <li><a href="https://ivymoda.com/danh-muc/ao-vest-nu">&Aacute;o vest nữ</a></li>
-                                    <li><a href="https://ivymoda.com/danh-muc/ao-peplum-nu">&Aacute;o peplum</a></li>
-                                    <li><a href="https://ivymoda.com/danh-muc/ao-thun-nu">&Aacute;o thun nữ</a></li>
-                                    <li><a href="https://ivymoda.com/danh-muc/ao-so-mi-nu">&Aacute;o sơ mi nữ</a></li>
-                                    <li><a href="https://ivymoda.com/danh-muc/ao-khoac-nu">&Aacute;o kho&aacute;c nữ</a></li>
+                                    <li><a href="?controller=category">&Aacute;o kiểu</a></li>
+                                    <li><a href="?controller=category">&Aacute;o croptop</a></li>
+                                    <li><a href="?controller=category">&Aacute;o vest nữ</a></li>
+                                    <li><a href="?controller=category">&Aacute;o peplum</a></li>
+                                    <li><a href="?controller=category">&Aacute;o thun nữ</a></li>
+                                    <li><a href="?controller=category">&Aacute;o sơ mi nữ</a></li>
+                                    <li><a href="?controller=category">&Aacute;o kho&aacute;c nữ</a></li>
                                 </ul>
                             </li>
                             <li>
                                 <a href="#" style="text-transform: uppercase"><b>Quần nữ</b></a>
                                 <ul>
-                                    <li><a href="https://ivymoda.com/danh-muc/quan-jean-nu">Quần jeans nữ</a></li>
-                                    <li><a href="https://ivymoda.com/danh-muc/quan-lung-short-nu">Quần lửng/short nữ</a></li>
-                                    <li><a href="https://ivymoda.com/danh-muc/quan-dai-nu">Quần d&agrave;i nữ</a></li>
+                                    <li><a href="quan-jean-nu">Quần jeans nữ</a></li>
+                                    <li><a href="quan-lung-short-nu">Quần lửng/short nữ</a></li>
+                                    <li><a href="quan-dai-nu">Quần d&agrave;i nữ</a></li>
                                 </ul>
                             </li>
                             <li>
                                 <a href="#" style="text-transform: uppercase"><b>Đầm nữ</b></a>
                                 <ul>
-                                    <li><a href="https://ivymoda.com/danh-muc/dam">Đầm</a></li>
-                                    <li><a href="https://ivymoda.com/danh-muc/dam-maxi">Đầm maxi</a></li>
-                                    <li><a href="https://ivymoda.com/danh-muc/dam-thun-nu">Đầm thun</a></li>
+                                    <li><a href="dam">Đầm</a></li>
+                                    <li><a href="dam-maxi">Đầm maxi</a></li>
+                                    <li><a href="dam-thun-nu">Đầm thun</a></li>
                                 </ul>
                             </li>
-                            <li><a href="https://ivymoda.com/danh-muc/zuyp">Zu&yacute;p nữ</a></li>
-                            <li><a href="https://ivymoda.com/danh-muc/senora-nu">Senora</a></li>
-                            <li><a href="https://ivymoda.com/danh-muc/jumpsuit">Jumpsuit</a></li>
-                            <li><a href="https://ivymoda.com/danh-muc/do-lot-nu">Đồ l&oacute;t</a></li>
-                            <li><a href="https://ivymoda.com/danh-muc/giay-nu">Gi&agrave;y nữ</a></li>
-                            <li><a href="https://ivymoda.com/danh-muc/phu-kien-nu">Phụ kiện nữ</a></li>
-                            <li><a href="https://ivymoda.com/danh-muc/do-boi-nu">Đồ bơi</a></li>
-                            <li><a href="https://ivymoda.com/danh-muc/tui-nu">T&uacute;i</a></li>
+                            <li><a href="zuyp">Zu&yacute;p nữ</a></li>
+                            <li><a href="senora-nu">Senora</a></li>
+                            <li><a href="jumpsuit">Jumpsuit</a></li>
+                            <li><a href="do-lot-nu">Đồ l&oacute;t</a></li>
+                            <li><a href="giay-nu">Gi&agrave;y nữ</a></li>
+                            <li><a href="phu-kien-nu">Phụ kiện nữ</a></li>
+                            <li><a href="do-boi-nu">Đồ bơi</a></li>
+                            <li><a href="tui-nu">T&uacute;i</a></li>
                         </ul>
                     </li>
                     <li class="dropdown">
                         <!-- fixed cho sale -->
-                        <a href="https://ivymoda.com/danh-muc/hang-nam-moi-ve" class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false">Nam</a>
+                        <a href="hang-nam-moi-ve" class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false">Nam</a>
                         <ul class="dropdown-menu">
-                            <li><a href="https://ivymoda.com/danh-muc/hang-nam-moi-ve">H&agrave;ng nam mới về</a></li>
-                            <li><a href="https://ivymoda.com/danh-muc/safe-zone">Safe Zone</a></li>
-                            <li><a href="https://ivymoda.com/danh-muc/new-polo-for-men">New Polo for Men</a></li>
+                            <li><a href="hang-nam-moi-ve">H&agrave;ng nam mới về</a></li>
+                            <li><a href="safe-zone">Safe Zone</a></li>
+                            <li><a href="new-polo-for-men">New Polo for Men</a></li>
                             <li>
                                 <a href="#" style="text-transform: uppercase"><b>&Aacute;o</b></a>
                                 <ul>
-                                    <li><a href="https://ivymoda.com/danh-muc/ao-so-mi-nam">&Aacute;o sơ mi nam</a></li>
-                                    <li><a href="https://ivymoda.com/danh-muc/ao-polo-nam">&Aacute;o polo nam</a></li>
-                                    <li><a href="https://ivymoda.com/danh-muc/ao-thun-nam">&Aacute;o thun nam</a></li>
-                                    <li><a href="https://ivymoda.com/danh-muc/ao-khoac-nam">&Aacute;o kho&aacute;c nam</a></li>
+                                    <li><a href="ao-so-mi-nam">&Aacute;o sơ mi nam</a></li>
+                                    <li><a href="ao-polo-nam">&Aacute;o polo nam</a></li>
+                                    <li><a href="ao-thun-nam">&Aacute;o thun nam</a></li>
+                                    <li><a href="ao-khoac-nam">&Aacute;o kho&aacute;c nam</a></li>
                                 </ul>
                             </li>
                             <li>
                                 <a href="#" style="text-transform: uppercase"><b>Quần nam</b></a>
                                 <ul>
-                                    <li><a href="https://ivymoda.com/danh-muc/quan-jean-nam">Quần jeans nam</a></li>
-                                    <li><a href="https://ivymoda.com/danh-muc/quan-lung-nam">Quần lửng/short nam</a></li>
-                                    <li><a href="https://ivymoda.com/danh-muc/quan-dai-nam">Quần d&agrave;i nam</a></li>
-                                    <li><a href="https://ivymoda.com/danh-muc/quan-khaki-nam">Quần kaki nam </a></li>
-                                    <li><a href="https://ivymoda.com/danh-muc/quan-tay-nam">Quần T&acirc;y Nam</a></li>
+                                    <li><a href="quan-jean-nam">Quần jeans nam</a></li>
+                                    <li><a href="quan-lung-nam">Quần lửng/short nam</a></li>
+                                    <li><a href="quan-dai-nam">Quần d&agrave;i nam</a></li>
+                                    <li><a href="quan-khaki-nam">Quần kaki nam </a></li>
+                                    <li><a href="quan-tay-nam">Quần T&acirc;y Nam</a></li>
                                 </ul>
                             </li>
-                            <li><a href="https://ivymoda.com/danh-muc/giay-nam">Gi&agrave;y nam</a></li>
-                            <li><a href="https://ivymoda.com/danh-muc/phu-kien-nam">Phụ kiện nam</a></li>
+                            <li><a href="giay-nam">Gi&agrave;y nam</a></li>
+                            <li><a href="phu-kien-nam">Phụ kiện nam</a></li>
                         </ul>
                     </li>
                     <li class="dropdown">
                         <!-- fixed cho sale -->
-                        <a href="https://ivymoda.com/danh-muc/hang-moi-ve-tre-em" class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false">Trẻ em</a>
+                        <a href="hang-moi-ve-tre-em" class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false">Trẻ em</a>
                         <ul class="dropdown-menu">
-                            <li><a href="https://ivymoda.com/danh-muc/hang-moi-ve-tre-em">H&agrave;ng mới về trẻ em</a></li>
-                            <li><a href="https://ivymoda.com/danh-muc/draw-the-dream">Draw the Dream</a></li>
+                            <li><a href="hang-moi-ve-tre-em">H&agrave;ng mới về trẻ em</a></li>
+                            <li><a href="draw-the-dream">Draw the Dream</a></li>
                             <li>
                                 <a href="#" style="text-transform: uppercase"><b>B&eacute; g&aacute;i</b></a>
                                 <ul>
-                                    <li><a href="https://ivymoda.com/danh-muc/quan-be-gai">Quần b&eacute; g&aacute;i</a></li>
-                                    <li><a href="https://ivymoda.com/danh-muc/vay-be-gai">V&aacute;y</a></li>
-                                    <li><a href="https://ivymoda.com/danh-muc/Zuyp-be-gai">Zu&yacute;p b&eacute; g&aacute;i</a></li>
-                                    <li><a href="https://ivymoda.com/danh-muc/ao-be-gai">&Aacute;o b&eacute; g&aacute;i</a></li>
-                                    <li><a href="https://ivymoda.com/danh-muc/phu-kien-be-gai">Phụ kiện b&eacute; g&aacute;i</a></li>
+                                    <li><a href="quan-be-gai">Quần b&eacute; g&aacute;i</a></li>
+                                    <li><a href="vay-be-gai">V&aacute;y</a></li>
+                                    <li><a href="Zuyp-be-gai">Zu&yacute;p b&eacute; g&aacute;i</a></li>
+                                    <li><a href="ao-be-gai">&Aacute;o b&eacute; g&aacute;i</a></li>
+                                    <li><a href="phu-kien-be-gai">Phụ kiện b&eacute; g&aacute;i</a></li>
                                 </ul>
                             </li>
                             <li>
                                 <a href="#" style="text-transform: uppercase"><b>B&eacute; trai</b></a>
                                 <ul>
-                                    <li><a href="https://ivymoda.com/danh-muc/quan-be-trai">Quần b&eacute; trai</a></li>
-                                    <li><a href="https://ivymoda.com/danh-muc/ao-be-trai">&Aacute;o b&eacute; trai</a></li>
-                                    <li><a href="https://ivymoda.com/danh-muc/phu-kien-be-trai">Phụ kiện b&eacute; trai</a></li>
+                                    <li><a href="quan-be-trai">Quần b&eacute; trai</a></li>
+                                    <li><a href="ao-be-trai">&Aacute;o b&eacute; trai</a></li>
+                                    <li><a href="phu-kien-be-trai">Phụ kiện b&eacute; trai</a></li>
                                 </ul>
                             </li>
                         </ul>
                     </li>
                     <li class="dropdown">
                         <!-- fixed cho sale -->
-                        <a href="https://ivymoda.com/danh-muc/sale" style="color:red" class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false">Sale 50%++</a>
+                        <a href="sale" style="color:red" class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false">Sale 50%++</a>
                         <ul class="dropdown-menu">
-                            <li><a href="https://ivymoda.com/danh-muc/sale-nu">Nữ</a></li>
-                            <li><a href="https://ivymoda.com/danh-muc/sale-nam">Nam</a></li>
-                            <li><a href="https://ivymoda.com/danh-muc/sale-tre-em">Trẻ em</a></li>
+                            <li><a href="sale-nu">Nữ</a></li>
+                            <li><a href="sale-nam">Nam</a></li>
+                            <li><a href="sale-tre-em">Trẻ em</a></li>
                         </ul>
                     </li>
                     <!--<li class="dropdown">-->
@@ -327,7 +327,7 @@
                             </li>
                         </ul>
                     </li> -->
-                    <!--<li class="dropdown"><a href="https://ivymoda.com/danh-muc/TomvaJerry" style="color:red">Tom &amp; Jerry Collection</a></li>-->
+                    <!--<li class="dropdown"><a href="TomvaJerry" style="color:red">Tom &amp; Jerry Collection</a></li>-->
                     <li class="dropdown">
                         <a href="https://ivymoda.com/tin-tuc/tin-chinh" class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false">Tin tức</a>
                     </li>
@@ -339,15 +339,15 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false">Thông tin</a>
                         <ul class="dropdown-menu">
-                            <li><a href="https://ivymoda.com/about/tu-van-size">Tư vấn size</a></li>
-                            <li><a href="https://ivymoda.com/about/chinhsach-dieukhoan">Chính sách điều khoản</a></li>
-                            <li><a href="https://ivymoda.com/about/huong-dan-mua-hang">Hướng dẫn mua hàng</a></li>
-                            <li><a href="https://ivymoda.com/about/chinh-sach-thanh-toan">Chinh sách thanh toán</a></li>
-                            <li><a href="https://ivymoda.com/about/chinh-sach-doi-tra">Chính sách đổi trả</a></li>
-                            <li><a href="https://ivymoda.com/about/chinh-sach-bao-hanh">Chính sách bảo hành </a></li>
-                            <li><a href="https://ivymoda.com/about/chinh-sach-giao-nhan-van-chuyen">Chính sách giao nhận vận chuyển</a></li>
-                            <li><a href="https://ivymoda.com/page/cuahang">Hệ thống cửa hàng</a></li>
-                            <li><a href="https://ivymoda.com/lien-he">Liên hệ</a></li>
+                            <li><a href="?controller=tu-van-size">Tư vấn size</a></li>
+                            <li><a href="?controller=chinhsach-dieukhoan">Chính sách điều khoản</a></li>
+                            <li><a href="?controller=huong-dan-mua-hang">Hướng dẫn mua hàng</a></li>
+                            <li><a href="?controller=chinh-sach-thanh-toan">Chinh sách thanh toán</a></li>
+                            <li><a href="?controller=chinh-sach-doi-tra">Chính sách đổi trả</a></li>
+                            <li><a href="?controller=chinh-sach-bao-hanh">Chính sách bảo hành </a></li>
+                            <li><a href="?controller=chinh-sach-giao-nhan-van-chuyen">Chính sách giao nhận vận chuyển</a></li>
+                            <li><a href="?controller=cuahang">Hệ thống cửa hàng</a></li>
+                            <li><a href="?controller=lien-he">Liên hệ</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -440,98 +440,98 @@
                         <a>Nữ</a> <span class="arrow" data-toggle="collapse" data-target="#cat_1" class="collapsed"></span>
                     </li>
                     <ul class="sub-menu collapse" id="cat_1">
-                        <li><a href="https://ivymoda.com/danh-muc/hang-nu-moi-ve">H&agrave;ng nữ mới về</a></li>
-                        <li><a href="https://ivymoda.com/danh-muc/new-secret">New Secret</a></li>
-                        <li><a href="https://ivymoda.com/danh-muc/green-leaf">Green Leaf</a></li>
-                        <li><a href="https://ivymoda.com/danh-muc/thanh-sac">Thanh Sắc</a></li>
+                        <li><a href="hang-nu-moi-ve">H&agrave;ng nữ mới về</a></li>
+                        <li><a href="new-secret">New Secret</a></li>
+                        <li><a href="green-leaf">Green Leaf</a></li>
+                        <li><a href="thanh-sac">Thanh Sắc</a></li>
                         <li>
                             <a href="#" style="text-transform: uppercase"><b>&Aacute;o</b></a>
                             <ul>
-                                <li><a href="https://ivymoda.com/danh-muc/ao-kieu-nu">&Aacute;o kiểu</a></li>
-                                <li><a href="https://ivymoda.com/danh-muc/ao-croptop">&Aacute;o croptop</a></li>
-                                <li><a href="https://ivymoda.com/danh-muc/ao-vest-nu">&Aacute;o vest nữ</a></li>
-                                <li><a href="https://ivymoda.com/danh-muc/ao-peplum-nu">&Aacute;o peplum</a></li>
-                                <li><a href="https://ivymoda.com/danh-muc/ao-thun-nu">&Aacute;o thun nữ</a></li>
-                                <li><a href="https://ivymoda.com/danh-muc/ao-so-mi-nu">&Aacute;o sơ mi nữ</a></li>
-                                <li><a href="https://ivymoda.com/danh-muc/ao-khoac-nu">&Aacute;o kho&aacute;c nữ</a></li>
+                                <li><a href="ao-kieu-nu">&Aacute;o kiểu</a></li>
+                                <li><a href="ao-croptop">&Aacute;o croptop</a></li>
+                                <li><a href="ao-vest-nu">&Aacute;o vest nữ</a></li>
+                                <li><a href="ao-peplum-nu">&Aacute;o peplum</a></li>
+                                <li><a href="ao-thun-nu">&Aacute;o thun nữ</a></li>
+                                <li><a href="ao-so-mi-nu">&Aacute;o sơ mi nữ</a></li>
+                                <li><a href="ao-khoac-nu">&Aacute;o kho&aacute;c nữ</a></li>
                             </ul>
                         </li>
                         <li>
                             <a href="#" style="text-transform: uppercase"><b>Quần nữ</b></a>
                             <ul>
-                                <li><a href="https://ivymoda.com/danh-muc/quan-jean-nu">Quần jeans nữ</a></li>
-                                <li><a href="https://ivymoda.com/danh-muc/quan-lung-short-nu">Quần lửng/short nữ</a></li>
-                                <li><a href="https://ivymoda.com/danh-muc/quan-dai-nu">Quần d&agrave;i nữ</a></li>
+                                <li><a href="quan-jean-nu">Quần jeans nữ</a></li>
+                                <li><a href="quan-lung-short-nu">Quần lửng/short nữ</a></li>
+                                <li><a href="quan-dai-nu">Quần d&agrave;i nữ</a></li>
                             </ul>
                         </li>
                         <li>
                             <a href="#" style="text-transform: uppercase"><b>Đầm nữ</b></a>
                             <ul>
-                                <li><a href="https://ivymoda.com/danh-muc/dam">Đầm</a></li>
-                                <li><a href="https://ivymoda.com/danh-muc/dam-maxi">Đầm maxi</a></li>
-                                <li><a href="https://ivymoda.com/danh-muc/dam-thun-nu">Đầm thun</a></li>
+                                <li><a href="dam">Đầm</a></li>
+                                <li><a href="dam-maxi">Đầm maxi</a></li>
+                                <li><a href="dam-thun-nu">Đầm thun</a></li>
                             </ul>
                         </li>
-                        <li><a href="https://ivymoda.com/danh-muc/zuyp">Zu&yacute;p nữ</a></li>
-                        <li><a href="https://ivymoda.com/danh-muc/senora-nu">Senora</a></li>
-                        <li><a href="https://ivymoda.com/danh-muc/jumpsuit">Jumpsuit</a></li>
-                        <li><a href="https://ivymoda.com/danh-muc/do-lot-nu">Đồ l&oacute;t</a></li>
-                        <li><a href="https://ivymoda.com/danh-muc/giay-nu">Gi&agrave;y nữ</a></li>
-                        <li><a href="https://ivymoda.com/danh-muc/phu-kien-nu">Phụ kiện nữ</a></li>
-                        <li><a href="https://ivymoda.com/danh-muc/do-boi-nu">Đồ bơi</a></li>
-                        <li><a href="https://ivymoda.com/danh-muc/tui-nu">T&uacute;i</a></li>
+                        <li><a href="zuyp">Zu&yacute;p nữ</a></li>
+                        <li><a href="senora-nu">Senora</a></li>
+                        <li><a href="jumpsuit">Jumpsuit</a></li>
+                        <li><a href="do-lot-nu">Đồ l&oacute;t</a></li>
+                        <li><a href="giay-nu">Gi&agrave;y nữ</a></li>
+                        <li><a href="phu-kien-nu">Phụ kiện nữ</a></li>
+                        <li><a href="do-boi-nu">Đồ bơi</a></li>
+                        <li><a href="tui-nu">T&uacute;i</a></li>
                     </ul>
                     <li data-toggle="collapse" data-target="#cat_2" class="collapsed">
                         <a>Nam</a> <span class="arrow" data-toggle="collapse" data-target="#cat_2" class="collapsed"></span>
                     </li>
                     <ul class="sub-menu collapse" id="cat_2">
-                        <li><a href="https://ivymoda.com/danh-muc/hang-nam-moi-ve">H&agrave;ng nam mới về</a></li>
-                        <li><a href="https://ivymoda.com/danh-muc/safe-zone">Safe Zone</a></li>
-                        <li><a href="https://ivymoda.com/danh-muc/new-polo-for-men">New Polo for Men</a></li>
+                        <li><a href="hang-nam-moi-ve">H&agrave;ng nam mới về</a></li>
+                        <li><a href="safe-zone">Safe Zone</a></li>
+                        <li><a href="new-polo-for-men">New Polo for Men</a></li>
                         <li>
                             <a href="#" style="text-transform: uppercase"><b>&Aacute;o</b></a>
                             <ul>
-                                <li><a href="https://ivymoda.com/danh-muc/ao-so-mi-nam">&Aacute;o sơ mi nam</a></li>
-                                <li><a href="https://ivymoda.com/danh-muc/ao-polo-nam">&Aacute;o polo nam</a></li>
-                                <li><a href="https://ivymoda.com/danh-muc/ao-thun-nam">&Aacute;o thun nam</a></li>
-                                <li><a href="https://ivymoda.com/danh-muc/ao-khoac-nam">&Aacute;o kho&aacute;c nam</a></li>
+                                <li><a href="ao-so-mi-nam">&Aacute;o sơ mi nam</a></li>
+                                <li><a href="ao-polo-nam">&Aacute;o polo nam</a></li>
+                                <li><a href="ao-thun-nam">&Aacute;o thun nam</a></li>
+                                <li><a href="ao-khoac-nam">&Aacute;o kho&aacute;c nam</a></li>
                             </ul>
                         </li>
                         <li>
                             <a href="#" style="text-transform: uppercase"><b>Quần nam</b></a>
                             <ul>
-                                <li><a href="https://ivymoda.com/danh-muc/quan-jean-nam">Quần jeans nam</a></li>
-                                <li><a href="https://ivymoda.com/danh-muc/quan-lung-nam">Quần lửng/short nam</a></li>
-                                <li><a href="https://ivymoda.com/danh-muc/quan-dai-nam">Quần d&agrave;i nam</a></li>
-                                <li><a href="https://ivymoda.com/danh-muc/quan-khaki-nam">Quần kaki nam </a></li>
-                                <li><a href="https://ivymoda.com/danh-muc/quan-tay-nam">Quần T&acirc;y Nam</a></li>
+                                <li><a href="quan-jean-nam">Quần jeans nam</a></li>
+                                <li><a href="quan-lung-nam">Quần lửng/short nam</a></li>
+                                <li><a href="quan-dai-nam">Quần d&agrave;i nam</a></li>
+                                <li><a href="quan-khaki-nam">Quần kaki nam </a></li>
+                                <li><a href="quan-tay-nam">Quần T&acirc;y Nam</a></li>
                             </ul>
                         </li>
-                        <li><a href="https://ivymoda.com/danh-muc/giay-nam">Gi&agrave;y nam</a></li>
-                        <li><a href="https://ivymoda.com/danh-muc/phu-kien-nam">Phụ kiện nam</a></li>
+                        <li><a href="giay-nam">Gi&agrave;y nam</a></li>
+                        <li><a href="phu-kien-nam">Phụ kiện nam</a></li>
                     </ul>
                     <li data-toggle="collapse" data-target="#cat_3" class="collapsed">
                         <a>Trẻ em</a> <span class="arrow" data-toggle="collapse" data-target="#cat_3" class="collapsed"></span>
                     </li>
                     <ul class="sub-menu collapse" id="cat_3">
-                        <li><a href="https://ivymoda.com/danh-muc/hang-moi-ve-tre-em">H&agrave;ng mới về trẻ em</a></li>
-                        <li><a href="https://ivymoda.com/danh-muc/draw-the-dream">Draw the Dream</a></li>
+                        <li><a href="hang-moi-ve-tre-em">H&agrave;ng mới về trẻ em</a></li>
+                        <li><a href="draw-the-dream">Draw the Dream</a></li>
                         <li>
                             <a href="#" style="text-transform: uppercase"><b>B&eacute; g&aacute;i</b></a>
                             <ul>
-                                <li><a href="https://ivymoda.com/danh-muc/quan-be-gai">Quần b&eacute; g&aacute;i</a></li>
-                                <li><a href="https://ivymoda.com/danh-muc/vay-be-gai">V&aacute;y</a></li>
-                                <li><a href="https://ivymoda.com/danh-muc/Zuyp-be-gai">Zu&yacute;p b&eacute; g&aacute;i</a></li>
-                                <li><a href="https://ivymoda.com/danh-muc/ao-be-gai">&Aacute;o b&eacute; g&aacute;i</a></li>
-                                <li><a href="https://ivymoda.com/danh-muc/phu-kien-be-gai">Phụ kiện b&eacute; g&aacute;i</a></li>
+                                <li><a href="quan-be-gai">Quần b&eacute; g&aacute;i</a></li>
+                                <li><a href="vay-be-gai">V&aacute;y</a></li>
+                                <li><a href="Zuyp-be-gai">Zu&yacute;p b&eacute; g&aacute;i</a></li>
+                                <li><a href="ao-be-gai">&Aacute;o b&eacute; g&aacute;i</a></li>
+                                <li><a href="phu-kien-be-gai">Phụ kiện b&eacute; g&aacute;i</a></li>
                             </ul>
                         </li>
                         <li>
                             <a href="#" style="text-transform: uppercase"><b>B&eacute; trai</b></a>
                             <ul>
-                                <li><a href="https://ivymoda.com/danh-muc/quan-be-trai">Quần b&eacute; trai</a></li>
-                                <li><a href="https://ivymoda.com/danh-muc/ao-be-trai">&Aacute;o b&eacute; trai</a></li>
-                                <li><a href="https://ivymoda.com/danh-muc/phu-kien-be-trai">Phụ kiện b&eacute; trai</a></li>
+                                <li><a href="quan-be-trai">Quần b&eacute; trai</a></li>
+                                <li><a href="ao-be-trai">&Aacute;o b&eacute; trai</a></li>
+                                <li><a href="phu-kien-be-trai">Phụ kiện b&eacute; trai</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -539,9 +539,9 @@
                         <a style="color:red !important;">Sale 50%++</a> <span class="arrow" data-toggle="collapse" data-target="#cat_35" class="collapsed"></span>
                     </li>
                     <ul class="sub-menu collapse" id="cat_35">
-                        <li><a href="https://ivymoda.com/danh-muc/sale-nu">Nữ</a></li>
-                        <li><a href="https://ivymoda.com/danh-muc/sale-nam">Nam</a></li>
-                        <li><a href="https://ivymoda.com/danh-muc/sale-tre-em">Trẻ em</a></li>
+                        <li><a href="sale-nu">Nữ</a></li>
+                        <li><a href="sale-nam">Nam</a></li>
+                        <li><a href="sale-tre-em">Trẻ em</a></li>
                     </ul>
                     <!--<li data-toggle="collapse" data-target="#khautrang" class="collapsed">-->
                     <!--<a style="color: red">Khẩu trang - Bộ bảo hộ</a> <span class="arrow" ></span>-->
@@ -596,7 +596,7 @@
                     <!--</ul>-->
                     <!-- -->
                     <!--<li data-toggle="collapse" data-target="#ivyLifeStyle" class="collapsed">-->
-                    <!--<a href="https://ivymoda.com/danh-muc/TomvaJerry" style="color:red">Tom &amp; Jerry Collection</a> <span class="arrow" ></span>-->
+                    <!--<a href="TomvaJerry" style="color:red">Tom &amp; Jerry Collection</a> <span class="arrow" ></span>-->
                     <!--</li>-->
                     <li data-toggle="collapse" data-target="#ivyLifeStyle" class="collapsed">
                         <a href="https://ivymoda.com/tin-tuc/tin-chinh">Tin tức</a> <span class="arrow"></span>

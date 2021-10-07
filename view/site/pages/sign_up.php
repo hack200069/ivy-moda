@@ -167,3 +167,6 @@
         </div>
     </div>
 </div>
+<script>
+    document.title = "Đăng ký tài khoản  | IVY moda";
+</script>

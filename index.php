@@ -5,11 +5,11 @@
 	require 'view/site/layouts/header.php'; 
 
 	if (isset($_GET['controller'])) {
-		require '../../route/admin/web.php'; 
+		require 'route/web.php'; 
 	} else {
 		require 'view/site/pages/home.php';
 	}
 
 	require 'view/site/layouts/footer.php'; 
 
-	$db->closeDatabase();
+	$db->closeDatabase(); 

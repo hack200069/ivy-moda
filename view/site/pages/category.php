@@ -314,7 +314,7 @@
                         <div class="col-md-12">
                             <div class="row">
                                 <div class="col-md-3 col-sm-4 col-xs-6">
-                                    <a href="https://ivymoda.com/sanpham/quan-lung-vai-phoi-soi-tencel-ms-21e3001-29419"><img data-original="../../public/images/product/977bebc9e514e1ed17a2399dcf2f391a.JPG" class="lazy " /></a>
+                                    <a href="https://ivymoda.com/sanpham/quan-lung-vai-phoi-soi-tencel-ms-21e3001-29419"><img data-original="public/images/product/977bebc9e514e1ed17a2399dcf2f391a.JPG" class="lazy " /></a>
                                     <div class="title_product"><a href="https://ivymoda.com/sanpham/quan-lung-vai-phoi-soi-tencel-ms-21e3001-29419">Quần lửng vải phối sợi Tencel MS 21E3001</a></div>
                                     <div class="price_product text-center">
                                         <span class="price_product_sale">690.000 <sup>đ</sup></span>
@@ -325,7 +325,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-3 col-sm-4 col-xs-6">
-                                    <a href="https://ivymoda.com/sanpham/quan-lung-khaki-dang-regular-ms-21e3016-29535"><img data-original="../../public/images/product/0ade958448b978646d867be4a4cfde63.JPG" class="lazy " /></a>
+                                    <a href="https://ivymoda.com/sanpham/quan-lung-khaki-dang-regular-ms-21e3016-29535"><img data-original="public/images/product/0ade958448b978646d867be4a4cfde63.JPG" class="lazy " /></a>
                                     <div class="title_product"><a href="https://ivymoda.com/sanpham/quan-lung-khaki-dang-regular-ms-21e3016-29535">Quần lửng khaki dáng Regular MS 21E3016</a></div>
                                     <div class="price_product text-center">
                                         <span class="price_product_sale">990.000 <sup>đ</sup></span>
@@ -336,7 +336,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-3 col-sm-4 col-xs-6">
-                                    <a href="https://ivymoda.com/sanpham/quan-lung-nam-khaki-ms-21e3000-29397"><img data-original="../../public/images/product/8e5d495f91f562e48d76ae9b904c9b81.JPG" class="lazy " /></a>
+                                    <a href="https://ivymoda.com/sanpham/quan-lung-nam-khaki-ms-21e3000-29397"><img data-original="public/images/product/8e5d495f91f562e48d76ae9b904c9b81.JPG" class="lazy " /></a>
                                     <div class="title_product"><a href="https://ivymoda.com/sanpham/quan-lung-nam-khaki-ms-21e3000-29397">Quần lửng nam khaki MS 21E3000</a></div>
                                     <div class="price_product text-center">
                                         <span class="price_product_sale">890.000 <sup>đ</sup></span>
@@ -347,7 +347,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-3 col-sm-4 col-xs-6">
-                                    <a href="https://ivymoda.com/sanpham/quan-lung-nam-khaki-ms-21e3000-29398"><img data-original="../../public/images/product/719e39d99508e40510a35d405c16d8d4.JPG" class="lazy " /></a>
+                                    <a href="https://ivymoda.com/sanpham/quan-lung-nam-khaki-ms-21e3000-29398"><img data-original="public/images/product/719e39d99508e40510a35d405c16d8d4.JPG" class="lazy " /></a>
                                     <div class="title_product"><a href="https://ivymoda.com/sanpham/quan-lung-nam-khaki-ms-21e3000-29398">Quần lửng nam khaki MS 21E3000</a></div>
                                     <div class="price_product text-center">
                                         <span class="price_product_sale">890.000 <sup>đ</sup></span>
@@ -358,7 +358,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-3 col-sm-4 col-xs-6">
-                                    <a href="https://ivymoda.com/sanpham/ao-polo-ke-doc-ms-57e2938-29653"><img data-original="../../public/images/product/2c2e074455546767f09a86f5d06ee97d.JPG" class="lazy " /></a>
+                                    <a href="https://ivymoda.com/sanpham/ao-polo-ke-doc-ms-57e2938-29653"><img data-original="public/images/product/2c2e074455546767f09a86f5d06ee97d.JPG" class="lazy " /></a>
                                     <div class="title_product"><a href="https://ivymoda.com/sanpham/ao-polo-ke-doc-ms-57e2938-29653">Áo polo kẻ dọc MS 57E2938</a></div>
                                     <div class="price_product text-center">
                                         <span class="price_product_sale">690.000 <sup>đ</sup></span>
@@ -369,7 +369,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-3 col-sm-4 col-xs-6">
-                                    <a href="https://ivymoda.com/sanpham/ao-thun-ke-phoi-ke-ms-57e2861-29426"><img data-original="../../public/images/product/948e0fd59d46f1523cf6513743ad819d.JPG" class="lazy " /></a>
+                                    <a href="https://ivymoda.com/sanpham/ao-thun-ke-phoi-ke-ms-57e2861-29426"><img data-original="public/images/product/948e0fd59d46f1523cf6513743ad819d.JPG" class="lazy " /></a>
                                     <div class="title_product"><a href="https://ivymoda.com/sanpham/ao-thun-ke-phoi-ke-ms-57e2861-29426">Áo thun kẻ phối kẻ MS 57E2861</a></div>
                                     <div class="price_product text-center">
                                         <span class="price_product_sale">690.000 <sup>đ</sup></span>
@@ -380,7 +380,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-3 col-sm-4 col-xs-6">
-                                    <a href="https://ivymoda.com/sanpham/quan-dai-nam-dang-slim-ms-22e3011-29673"><img data-original="../../public/images/product/f1631bfa939b93b819189d5f0dcacf17.JPG" class="lazy " /></a>
+                                    <a href="https://ivymoda.com/sanpham/quan-dai-nam-dang-slim-ms-22e3011-29673"><img data-original="public/images/product/f1631bfa939b93b819189d5f0dcacf17.JPG" class="lazy " /></a>
                                     <div class="title_product"><a href="https://ivymoda.com/sanpham/quan-dai-nam-dang-slim-ms-22e3011-29673">Quần dài nam dáng Slim MS 22E3011</a></div>
                                     <div class="price_product text-center">
                                         <span class="price_product_sale">1.190.000 <sup>đ</sup></span>
@@ -391,7 +391,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-3 col-sm-4 col-xs-6">
-                                    <a href="https://ivymoda.com/sanpham/ao-polo-nam-ke-ngang-ms-57e2936-29684"><img data-original="../../public/images/product/70ec8d832e52dbb171b76eceecde719f.JPG" class="lazy " /></a>
+                                    <a href="https://ivymoda.com/sanpham/ao-polo-nam-ke-ngang-ms-57e2936-29684"><img data-original="public/images/product/70ec8d832e52dbb171b76eceecde719f.JPG" class="lazy " /></a>
                                     <div class="title_product"><a href="https://ivymoda.com/sanpham/ao-polo-nam-ke-ngang-ms-57e2936-29684">Áo polo nam kẻ ngang MS 57E2936</a></div>
                                     <div class="price_product text-center">
                                         <span class="price_product_sale">690.000 <sup>đ</sup></span>

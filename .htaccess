@@ -1,0 +1,4 @@
+ErrorDocument 404 http://localhost/ivy-moda/?controller=not_found
+ErrorDocument 500 http://localhost/ivy-moda/?controller=not_found
+ErrorDocument 401 http://localhost/ivy-moda/?controller=not_found
+ErrorDocument 403 http://localhost/ivy-moda/?controller=not_found
