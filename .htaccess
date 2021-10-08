@@ -1,4 +1,4 @@
-ErrorDocument 404 http://localhost/ivy-moda/?controller=not_found
-ErrorDocument 500 http://localhost/ivy-moda/?controller=not_found
-ErrorDocument 401 http://localhost/ivy-moda/?controller=not_found
-ErrorDocument 403 http://localhost/ivy-moda/?controller=not_found
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-d 
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.+)$ index.php?url=$1
