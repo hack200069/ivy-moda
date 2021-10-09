@@ -213,10 +213,32 @@
                             </div><!-- /input-group -->
                         </form>
                     </li>
-                    <li><a href="https://ivymoda.com/page/order_find" title="Tra cứu đơn hàng"><i class="fa fa-paw"></i></a></li>
-                    <li>
-                        <?php echo '<a href="' . SCRIPT_ROOT . '/customer/login"><i class="fa fa-user" aria-hidden="true"></i></a>'; ?></a>
-                    </li>
+                    <?php
+                    if (isset($_SESSION['user'])) {
+                        echo '
+                            <li class="dropdown">
+                                <a class="dropdown-toggle" href="https://ivymoda.com/customer/info" title="Cập nhật tài khoản ' . $_SESSION['user']['first_name'] . ' ' . $_SESSION['user']['last_name'] . '">Tài khoản</a>
+                                <ul class="dropdown-menu" style="width: 180px">
+                                    ';
+                        if($_SESSION['user']['role'] == ADMIN){
+                            echo '<li style="padding: 5px 5px 0px 5px;"><a href="' . SCRIPT_ROOT . '/admin">Quản lý website</a></li>';
+                        }
+                        echo '
+                                    <li style="padding: 5px 5px 0px 5px;"><a href="https://ivymoda.com/customer/info">Tài khoản của tôi</a></li>
+                                    <li style="padding: 5px 5px 0px 5px;"><a href="https://ivymoda.com/customer/order_list">Đơn mua</a></li>
+                                    <li style="text-align: left; padding: 5px 5px 0px 5px;"><a href="' . SCRIPT_ROOT . '/customer/logout">Đăng xuất</a></li>
+                                </ul>
+                            </li>
+                            ';
+                    } else {
+                        echo '
+                            <li><a href="https://ivymoda.com/page/order_find" title="Tra cứu đơn hàng"><i class="fa fa-paw"></i></a></li>
+                            <li>
+                                <a href="' . SCRIPT_ROOT . '/customer/login"><i class="fa fa-user" aria-hidden="true"></i></a></a>
+                            </li>
+                            ';
+                    }
+                    ?>
                     <li class="dropdown">
                         <a href="https://ivymoda.com/thanhtoan/giohang">
                             <i class="fa fa-shopping-bag" aria-hidden="true"></i>
@@ -286,7 +308,22 @@
             <div class="brand"><i class="fa fa-bars" aria-hidden="true"></i> Danh mục</div>
             <div class="menu-list">
                 <div class="login_mobile">
-                    <?php echo '<a href="' . SCRIPT_ROOT . '/customer/login">Đăng nhập <i class="fa fa-user" aria-hidden="true"></i></a>'; ?></a>
+                    <?php
+                    if (isset($_SESSION['user'])) {
+                        if($_SESSION['user']['role'] == ADMIN){
+                            echo '<p style="padding: 5px"><a href="' . SCRIPT_ROOT . '/admin">Quản lý website</a></p>';
+                        }
+                        echo '
+                            <p style="padding: 5px"><a href="https://ivymoda.com/customer/info">Tài khoản của tôi</a></p>
+                            <p style="padding: 5px"><a href="https://ivymoda.com/customer/order_list">Đơn mua</a></p>
+                            <p style="padding: 5px"><a href="' . SCRIPT_ROOT . '/customer/logout">Đăng xuất</a></p>
+                            ';
+                    } else {
+                        echo '
+                            <a href="' . SCRIPT_ROOT . '/customer/login">Đăng nhập <i class="fa fa-user" aria-hidden="true"></i></a>
+                            ';
+                    }
+                    ?>
                 </div>
                 <ul id="menu-content" class="menu-content out">
                     <li data-toggle="collapse" data-target="#cat_1" class="collapsed">
@@ -396,26 +433,6 @@
                         <li><a href="sale-nam">Nam</a></li>
                         <li><a href="sale-tre-em">Trẻ em</a></li>
                     </ul>
-                    <!--<li data-toggle="collapse" data-target="#khautrang" class="collapsed">-->
-                    <!--<a style="color: red">Khẩu trang - Bộ bảo hộ</a> <span class="arrow" ></span>-->
-                    <!--</li>-->
-                    <!--<ul class="sub-menu collapse" id="khautrang">-->
-                    <!--<li>-->
-                    <!--<a href="https://ivymoda.com/sanpham/mu-kinh-chong-giot-ban-bao-ho-ms-85a2730-24184">Mũ kính chống giọt bắn</a>-->
-                    <!--</li>-->
-                    <!--<li>-->
-                    <!--<a href="https://ivymoda.com/sanpham/combo-2-khau-trang-nano-bac-khang-khuan-nguoi-lon-24097">Khẩu trang người lớn</a>-->
-                    <!--</li>-->
-                    <!--<li>-->
-                    <!--<a href="https://ivymoda.com/sanpham/combo-2-khau-trang-nano-bac-khang-khuan-tre-em-ms-85k1052-24098">Khẩu trang trẻ em</a>-->
-                    <!--</li>-->
-                    <!--<li>-->
-                    <!--<a href="https://ivymoda.com/sanpham/bo-phong-dich-nguoi-lon-ms-18m5431-24181">Bộ bảo hộ người lớn</a>-->
-                    <!--</li>-->
-                    <!--<li>-->
-                    <!--<a href="https://ivymoda.com/sanpham/bo-phong-dich-tre-em-ms-18g1021-24179">Bộ bảo hộ trẻ em</a>-->
-                    <!--</li>-->
-                    <!--</ul>-->
                     <li data-toggle="collapse" data-target="#xuhuong" class="collapsed">
                         <a>Bộ sưu tập</a> <span class="arrow"></span>
                     </li>
@@ -441,16 +458,6 @@
                         <li><a href="https://ivymoda.com/lookbook/orchid-muse-104">Orchid Muse</a></li>
                         <li><a href="https://ivymoda.com/lookbook/tom-jerry-collection-93">Tom &amp; Jerry Collection</a></li>
                     </ul>
-                    <!--<li data-toggle="collapse" data-target="#tk_sizecolor" class="collapsed">
-                    <a>Tìm theo size, màu</a> <span class="arrow" ></span>
-                </li>-->
-                    <!--<ul class="sub-menu collapse" id="tk_sizecolor">-->
-                    <!--<li><a href="https://ivymoda.com/tim-kiem?hid_size=s&hid_color=&q=&sel_order=&hid_quantity_live=1">Tìm kiếm</a></li>-->
-                    <!--</ul>-->
-                    <!-- -->
-                    <!--<li data-toggle="collapse" data-target="#ivyLifeStyle" class="collapsed">-->
-                    <!--<a href="TomvaJerry" style="color:red">Tom &amp; Jerry Collection</a> <span class="arrow" ></span>-->
-                    <!--</li>-->
                     <li data-toggle="collapse" data-target="#ivyLifeStyle" class="collapsed">
                         <?php echo '<a href="' . SCRIPT_ROOT . '/tin-tuc/tin-chinh">Tin tức</a>' ?> <span class="arrow"></span>
                     </li>

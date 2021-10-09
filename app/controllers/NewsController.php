@@ -5,14 +5,16 @@ class NewsController
 {
     public function index()
     {
-        include 'view/site/layouts/header.php'; 
-        include 'view/site/pages/tin_tuc.php';
-        include 'view/site/layouts/footer.php'; 
+        include_once('view/site/layouts/header.php'); 
+        include_once('view/site/pages/tin_tuc.php');
+        include_once('view/site/layouts/footer.php'); 
+        return;
     }
     public function detail()
     {
-        include 'view/site/layouts/header.php'; 
-        include 'view/site/pages/bai_viet.php';
-        include 'view/site/layouts/footer.php'; 
+        include_once('view/site/layouts/header.php'); 
+        include_once('view/site/pages/bai_viet.php');
+        include_once('view/site/layouts/footer.php'); 
+        return;
     }
 }

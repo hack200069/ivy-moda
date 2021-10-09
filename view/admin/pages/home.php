@@ -3,11 +3,11 @@
 		<div class="container-fluid">
 			<div class="row mb-2">
 				<div class="col-sm-6">
-					<h1 class="m-0 text-dark">Trang chủ</h1>
+					<h1 class="m-0 text-dark">Dashboard</h1>
 				</div><!-- /.col -->
 				<div class="col-sm-6">
 					<ol class="breadcrumb float-sm-right">
-						<li class="breadcrumb-item"><a href="#">Home</a></li>
+						<li class="breadcrumb-item"><a href="javascript:void(0)">Dashboard</a></li>
 						<li class="breadcrumb-item active">Admin</li>
 					</ol>
 				</div>
@@ -23,7 +23,7 @@
 						<div class="inner">
 							<h3>150</h3>
 
-							<h4>CHUYÊN MỤC</h4>
+							<h4>SẢN PHẨM</h4>
 						</div>
 						<div class="icon">
 							<i class="ion ion-bag"></i>
@@ -36,9 +36,9 @@
 					<!-- small box -->
 					<div class="small-box bg-success">
 						<div class="inner">
-							<h3>53<sup style="font-size: 20px">%</sup></h3>
+							<h3>53</h3>
 
-							<h4>BÀI VIẾT</h4>
+							<h4>ĐƠN HÀNG</h4>
 						</div>
 						<div class="icon">
 							<i class="ion ion-stats-bars"></i>
@@ -68,7 +68,7 @@
 						<div class="inner">
 							<h3>65</h3>
 
-							<h4>BÌNH LUẬN</h4>
+							<h4>TIN TỨC</h4>
 						</div>
 						<div class="icon">
 							<i class="ion ion-pie-graph"></i>
@@ -81,3 +81,6 @@
 		</div>
 	</section>
 </div>
+<script>
+	document.title = "Dashboard | IVY moda";
+</script>

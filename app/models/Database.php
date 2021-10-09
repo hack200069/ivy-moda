@@ -1,5 +1,7 @@
 <?php
 
+namespace App\Models;
+
 class Database
 {
 	public $conn = NULL;
@@ -7,18 +9,19 @@ class Database
 	private $dbName = 'ivy';
 	private $user = 'root';
 	private $password = '';
-        
+
 	public function connect()
 	{
-		$this->conn = new mysqli($this->server, $this->user, $this->password, $this->dbName);
+		$this->conn = new \mysqli($this->server, $this->user, $this->password, $this->dbName);
 
 		if ($this->conn->connect_error) {
-			printf($this->conn->connect_error);
-			exit();
+			die("Connection failed: " . $this->conn->connect_error);
+		} else {
+			$this->conn->set_charset("utf8");
 		}
-		$this->conn->set_charset("utf8");
 	}
-        public function closeDatabase()
+
+	public function closeDatabase()
 	{
 		if ($this->conn) {
 			$this->conn->close();

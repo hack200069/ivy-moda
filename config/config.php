@@ -1,5 +1,3 @@
 <?php
-
-define('client', 1);
-define('staff', 2);
-define('admin', 3);
+define('CLIENT', 1);
+define('ADMIN', 2);

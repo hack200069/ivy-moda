@@ -5,8 +5,9 @@ class HomeController
 {
     public function index()
     {
-        include 'view/site/layouts/header.php'; 
-        include 'view/site/pages/home.php';
-        include 'view/site/layouts/footer.php'; 
+        include_once('view/site/layouts/header.php'); 
+        include_once('view/site/pages/home.php');
+        include_once('view/site/layouts/footer.php'); 
+        return;
     }
 }

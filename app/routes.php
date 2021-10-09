@@ -1,9 +1,18 @@
 <?php 
 
+// Client
 $router->get('/', 'HomeController@index');
 $router->get('/customer/login', 'AccountController@login');
+$router->post('/customer/login', 'AccountController@submitLogin');
 $router->get('/customer/register', 'AccountController@register');
-$router->get('/customer/forgotpass', 'AccountController@forgot_pass');
+$router->post('/customer/register', 'AccountController@submitRegister');
+$router->get('/customer/logout', 'AccountController@logout');
+
+$router->get('/danh-muc/{slug}', 'CategoryController@detail');
+$router->get('/sanpham/{slug}', 'ProductController@index');
+$router->get('/tin-tuc/{slug}', 'NewsController@index');
+$router->get('/tin-tuc/bai-viet/{slug}', 'NewsController@detail');
+
 $router->get('/about/gioi-thieu', 'AboutController@gioi_thieu');
 $router->get('/about/tu-van-size', 'AboutController@tu_van_size');
 $router->get('/about/chinhsach-dieukhoan', 'AboutController@chinh_sach_dieu_khoan');
@@ -14,8 +23,10 @@ $router->get('/about/chinh-sach-bao-hanh', 'AboutController@chinh_sach_bao_hanh'
 $router->get('/about/chinh-sach-giao-nhan-van-chuyen', 'AboutController@chinh_sach_giao_nhan_van_chuyen');
 $router->get('/page/cuahang', 'AboutController@he_thong_cua_hang');
 $router->get('/lien-he', 'ContactController@index');
-$router->get('/danh-muc/hang-nam-moi-ve', 'CategoryController@index');
-$router->get('/sanpham/quan-lung-vai-phoi-soi-tencel-ms-21e3001-29419', 'ProductController@index');
-$router->get('/tin-tuc/tin-chinh', 'NewsController@index');
-$router->get('/tin-tuc/bai-viet/ao-so-mi-tre-vai-226', 'NewsController@detail');
 
+// Admin
+$router->get('/admin', 'AdminController@index');
+$router->get('/admin/category', 'CategoryController@index');
+$router->get('/admin/category/create', 'CategoryController@create');
+$router->post('/admin/category/create', 'CategoryController@submitCreate');
+$router->get('/admin/category/edit', 'CategoryController@edit');

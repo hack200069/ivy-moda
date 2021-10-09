@@ -10,7 +10,7 @@
     <div class="inputGroup_box col-md-12">
         <div class="inputGroup">
             <form enctype="application/x-www-form-urlencoded" action="https://ivymoda.com/page/subscribe" method="post" name="frm_subscribe" id="frm_subscribe">
-                <input type="text" placeholder="Nhập email của bạn..." id="txt_subscribe_email" name="email" />
+                <input type="text" placeholder="Nhập email của bạn..." id="txt_subscribe_email" name="email" readonly/>
                 <button type="button" id="but_subscribe"><i class="fa fa-long-arrow-left fa-lg" aria-hidden="true"></i></button>
             </form>
         </div>

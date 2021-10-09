@@ -5,8 +5,9 @@ class ProductController
 {
     public function index()
     {
-        include 'view/site/layouts/header.php'; 
-        include 'view/site/pages/sanpham.php';
-        include 'view/site/layouts/footer.php'; 
+        include_once('view/site/layouts/header.php'); 
+        include_once('view/site/pages/sanpham.php');
+        include_once('view/site/layouts/footer.php'); 
+        return;
     }
 }

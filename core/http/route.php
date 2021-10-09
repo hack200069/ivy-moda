@@ -115,12 +115,13 @@ class Route
                     return;
                 }
             }
+            
         }
 
         // nếu không khớp với bất kì route nào cả.
-        require 'view/site/layouts/header.php'; 
-        require 'view/site/pages/404.php';
-        require 'view/site/layouts/footer.php'; 
+        include_once('view/site/layouts/header.php'); 
+        include_once('view/site/pages/404.php');
+        include_once('view/site/layouts/footer.php'); 
         return;
     }
 

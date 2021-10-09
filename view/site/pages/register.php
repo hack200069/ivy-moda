@@ -1,132 +1,162 @@
 <div id="register" class="row title_h3">
     <div class="container">
         <h3>Đăng ký</h3>
+        <?php
+        if (!empty($_SESSION['register_error'])) {
+            echo '<div class="alert alert-danger alert-dismissable" style="margin-bottom: 10px; margin-top: 10px;">
+            <a href="javascript:void(0)" class="close" data-dismiss="alert" aria-label="close">×</a>';
+            if (isset($_SESSION['register_error']['email'])) {
+                echo '<strong>Lỗi!</strong> ' . $_SESSION['register_error']['email'] . '<br>';
+                unset($_SESSION['register_error']['email']);
+            }
+            if (isset($_SESSION['register_error']['password'])) {
+                echo '<strong>Lỗi!</strong> ' . $_SESSION['register_error']['password'] . '<br>';
+                unset($_SESSION['register_error']['password']);
+            }
+            if (isset($_SESSION['register_error']['password_length'])) {
+                echo '<strong>Lỗi!</strong> ' . $_SESSION['register_error']['password_length'] . '<br>';
+                unset($_SESSION['register_error']['password_length']);
+            }
+            if (isset($_SESSION['register_error']['first_name'])) {
+                echo '<strong>Lỗi!</strong> ' . $_SESSION['register_error']['first_name'] . '<br>';
+                unset($_SESSION['register_error']['first_name']);
+            }
+            if (isset($_SESSION['register_error']['last_name'])) {
+                echo '<strong>Lỗi!</strong> ' . $_SESSION['register_error']['last_name'] . '<br>';
+                unset($_SESSION['register_error']['last_name']);
+            }
+            if (isset($_SESSION['register_error']['phone'])) {
+                echo '<strong>Lỗi!</strong> ' . $_SESSION['register_error']['phone'] . '<br>';
+                unset($_SESSION['register_error']['phone']);
+            }
+            if (isset($_SESSION['register_error']['dob'])) {
+                echo '<strong>Lỗi!</strong> ' . $_SESSION['register_error']['dob'] . '<br>';
+                unset($_SESSION['register_error']['dob']);
+            }
+            if (isset($_SESSION['register_error']['gender'])) {
+                echo '<strong>Lỗi!</strong> ' . $_SESSION['register_error']['gender'] . '<br>';
+                unset($_SESSION['register_error']['gender']);
+            }
+            if (isset($_SESSION['register_error']['city'])) {
+                echo '<strong>Lỗi!</strong> ' . $_SESSION['register_error']['city'] . '<br>';
+                unset($_SESSION['register_error']['city']);
+            }
+            if (isset($_SESSION['register_error']['district'])) {
+                echo '<strong>Lỗi!</strong> ' . $_SESSION['register_error']['district'] . '<br>';
+                unset($_SESSION['register_error']['district']);
+            }
+            if (isset($_SESSION['register_error']['ward'])) {
+                echo '<strong>Lỗi!</strong> ' . $_SESSION['register_error']['ward'] . '<br>';
+                unset($_SESSION['register_error']['ward']);
+            }
+            if (isset($_SESSION['register_error']['address'])) {
+                echo '<strong>Lỗi!</strong> ' . $_SESSION['register_error']['address'] . '<br>';
+                unset($_SESSION['register_error']['address']);
+            }
+            if (isset($_SESSION['register_error']['email_exist'])) {
+                echo '<strong>Lỗi!</strong> ' . $_SESSION['register_error']['email_exist'] . '<br>';
+                unset($_SESSION['register_error']['email_exist']);
+            }
+            if (isset($_SESSION['register_error']['phone_exist'])) {
+                echo '<strong>Lỗi!</strong> ' . $_SESSION['register_error']['phone_exist'] . '<br>';
+                unset($_SESSION['register_error']['phone_exist']);
+            }
+            if (isset($_SESSION['register_error']['sthg_wrong'])) {
+                echo '<strong>Lỗi!</strong> ' . $_SESSION['register_error']['sthg_wrong'] . '<br>';
+                unset($_SESSION['register_error']['sthg_wrong']);
+            }
+            unset($_SESSION['register_error']);
+            echo '</div>';
+        }
+        ?>
+        <div id="error-area" class="alert alert-danger alert-dismissable" style="margin-bottom: 10px; margin-top: 10px; display: none;">
+            <a href="javascript:void(0)" class="close" data-dismiss="alert" aria-label="close">×</a>
+            <div id="error-block">
+            </div>
+        </div>
         <div class="row">
-            <form enctype="application/x-www-form-urlencoded" name="frm_register" method="post" action="">
+            <form name="frm_register" id="frm_register" method="post">
                 <div class="col-md-6 col-sm-6 col-xs-12">
                     <h4>Thông tin khách hàng</h4>
                     <div class="row">
                         <div class="col-md-6 col-sm-6 col-xs-12">
                             <p><b>Họ:<span>*</span></b></p>
-                            <input type="text" value="" name="customer_firstname" placeholder="Họ..." required />
+                            <input type="text" value="<?php if (isset($_SESSION['register_input']['first_name'])) {
+                                                            echo $_SESSION['register_input']['first_name'];
+                                                        } ?>" name="first_name" placeholder="Họ..." required />
                         </div>
                         <div class="col-md-6 col-sm-6 col-xs-12">
                             <p><b>Tên:<span>*</span></b></p>
-                            <input type="text" value="" name="customer_display_name" placeholder="Tên..." required />
+                            <input type="text" value="<?php if (isset($_SESSION['register_input']['last_name'])) {
+                                                            echo $_SESSION['register_input']['last_name'];
+                                                        } ?>" name="last_name" placeholder="Tên..." required />
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-6 col-sm-6 col-xs-12">
                             <p><b>Email:<span>*</span></b></p>
-                            <input type="email" name="customer_email" value="" placeholder="Email..." required />
+                            <input type="email" name="email" value="<?php if (isset($_SESSION['register_input']['email'])) {
+                                                                        echo $_SESSION['register_input']['email'];
+                                                                    } ?>" placeholder="Email..." required />
                         </div>
                         <div class="col-md-6 col-sm-6 col-xs-12">
                             <p><b>Điện thoại:<span>*</span></b></p>
-                            <input type="text" value="" name="customer_phone" placeholder="Điện thoại..." required />
+                            <input type="text" value="<?php if (isset($_SESSION['register_input']['phone'])) {
+                                                            echo $_SESSION['register_input']['phone'];
+                                                        } ?>" name="phone" placeholder="Điện thoại..." required />
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-6 col-sm-6 col-xs-12">
                             <p><b>Ngày sinh:<span>*</span></b></p>
-                            <input type="text" class="datepicker" name="customer_birthday" value="" placeholder="Ngày sinh..." required />
+                            <input type="text" class="datepicker" name="dob" value="<?php if (isset($_SESSION['register_input']['dob'])) {
+                                                                                        echo $_SESSION['register_input']['dob'];
+                                                                                    } ?>" placeholder="Ngày sinh..." required />
                         </div>
                         <div class="col-md-6 col-sm-6 col-xs-12">
                             <p><b>Giới tính:<span>*</span></b></p>
-                            <select name="customer_sex">
-                                <option value="0">Nữ</option>
-                                <option value="1">Nam</option>
+                            <select name="gender">
+                                <option value="1" <?php if (isset($_SESSION['register_input']['gender'])) {
+                                                        if ($_SESSION['register_input']['gender'] == 1) {
+                                                            echo 'selected';
+                                                        }
+                                                    } ?>>Nam</option>
+                                <option value="2" <?php if (isset($_SESSION['register_input']['gender'])) {
+                                                        if ($_SESSION['register_input']['gender'] == 2) {
+                                                            echo 'selected';
+                                                        }
+                                                    } ?>>Nữ</option>
                             </select>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-6 col-sm-6 col-xs-12">
                             <p><b>Tỉnh/TP:<span>*</span></b></p>
-                            <select name="register_region_id" id="register_region_id">
-                                <option value="-1">Chọn Tỉnh/Tp</option>
-                                <option value="511">Hà Nội</option>
-                                <option value="507">Hồ Chí Minh</option>
-                                <option value="512">Hải Phòng</option>
-                                <option value="499">Đà Nẵng</option>
-                                <option value="485">An Giang</option>
-                                <option value="486">Bình Dương</option>
-                                <option value="487">Bắc Giang</option>
-                                <option value="488">Bình Định</option>
-                                <option value="489">Bắc Cạn</option>
-                                <option value="490">Bạc Liêu</option>
-                                <option value="491">Bắc Ninh</option>
-                                <option value="492">Bình Phước</option>
-                                <option value="493">Bà Rịa Vũng Tàu</option>
-                                <option value="494">Bình Thuận</option>
-                                <option value="495">Bến Tre</option>
-                                <option value="496">Cao Bằng</option>
-                                <option value="497">Cà Mau</option>
-                                <option value="498">Cần Thơ</option>
-                                <option value="500">Điện Biên</option>
-                                <option value="501">Đắc Lắc</option>
-                                <option value="502">Đồng Nai</option>
-                                <option value="503">Đắc Nông</option>
-                                <option value="504">Đồng Tháp</option>
-                                <option value="505">Gia Lai</option>
-                                <option value="506">Hòa Bình</option>
-                                <option value="508">Hải Dương</option>
-                                <option value="509">Hà Giang</option>
-                                <option value="510">Hà Nam</option>
-                                <option value="513">Hà Tĩnh</option>
-                                <option value="514">Hậu Giang</option>
-                                <option value="515">Hưng Yên</option>
-                                <option value="516">Kiên Giang</option>
-                                <option value="517">Khánh Hòa</option>
-                                <option value="518">Kon Tum</option>
-                                <option value="519">Long An</option>
-                                <option value="520">Lâm Đồng</option>
-                                <option value="521">Lai Châu</option>
-                                <option value="522">Lào Cai</option>
-                                <option value="523">Lạng Sơn</option>
-                                <option value="524">Nghệ An</option>
-                                <option value="525">Ninh Bình</option>
-                                <option value="526">Nam Định</option>
-                                <option value="527">Ninh Thuận</option>
-                                <option value="528">Phú Thọ</option>
-                                <option value="529">Phú Yên</option>
-                                <option value="530">Quảng Bình</option>
-                                <option value="531">Quảng Ngãi</option>
-                                <option value="532">Quảng Nam</option>
-                                <option value="533">Quảng Ninh</option>
-                                <option value="534">Quảng Trị</option>
-                                <option value="535">Sơn La</option>
-                                <option value="536">Sóc Trăng</option>
-                                <option value="537">Thái Bình</option>
-                                <option value="538">Tiền Giang</option>
-                                <option value="539">Thanh Hóa</option>
-                                <option value="540">Tây Ninh</option>
-                                <option value="541">Tuyên Quang</option>
-                                <option value="542">Huế</option>
-                                <option value="543">Trà Vinh</option>
-                                <option value="544">Thái Nguyên</option>
-                                <option value="545">Vĩnh Long</option>
-                                <option value="546">Vĩnh Phúc</option>
-                                <option value="547">Yên Bái</option>
+                            <select name="city" id="city" required>
+                                <option value="">Chọn Tỉnh/Tp</option>
                             </select>
                         </div>
                         <div class="col-md-6 col-sm-6 col-xs-12">
                             <p><b>Quận/Huyện:<span>*</span></b></p>
-                            <select name="register_city_id" id="register_city_id">
-                                <option value="-1">Chọn Quận/Huyện</option>
+                            <select name="district" id="district" required>
+                                <option value="">Chọn Quận/Huyện</option>
                             </select>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-12 col-sm-12 col-xs-12">
                             <p><b>Phường/Xã:<span>*</span></b></p>
-                            <select name="vnward_id" id="vnward_id">
-                                <option value="-1">Chọn Phường/Xã</option>
+                            <select name="ward" id="ward" required>
+                                <option value="">Chọn Phường/Xã</option>
                             </select>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-12 col-sm-12 col-xs-12">
                             <p><b>Địa chỉ:<span>*</span></b></p>
-                            <textarea name="address"></textarea>
+                            <textarea name="address" required><?php if (isset($_SESSION['register_input']['address'])) {
+                                                            echo $_SESSION['register_input']['address'];
+                                                        } ?></textarea>
                         </div>
                     </div>
                 </div>
@@ -135,26 +165,20 @@
                     <div class="row">
                         <div class="col-md-12 col-sm-12 col-xs-12">
                             <p><b>Mật khẩu:<span>*</span></b></p>
-                            <input type="password" value="" name="customer_pass1" placeholder="Mật khẩu..." required />
+                            <input type="password" value="" name="password" id="customer_pass1" placeholder="Mật khẩu..." required autocomplete="false"/>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-12 col-sm-12 col-xs-12">
                             <p><b>Nhập lại mật khẩu:<span>*</span></b></p>
-                            <input type="password" value="" name="customer_pass2" placeholder="Nhập lại mật khẩu..." required />
+                            <input type="password" value="" name="confirm_password" id="customer_pass2" placeholder="Nhập lại mật khẩu..." required />
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-12 col-sm-12 col-xs-12">
-                            <p><b>Mời nhập các ký tự trong hình vào ô sau:<span>*</span></b></p>
-                            <input type="text" name="captcha" required />
-                            <p class="img_capcha"><img src="https://ivymoda.com/ajax/captcha" border="0" class="img-responsive" /></p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12 col-sm-12 col-xs-12">
-                            <input type="checkbox" id="checkboxRegister_1" name="customer_agree" value="1" style="width: 15px; height: 17px; vertical-align: sub" /> Tôi đồng ý với các <a href="https://ivymoda.com/about/chinh-sach-bao-hanh" target="_blank">điều khoản của Ivy</a><em class="required">*</em></label>
-                            <p><input type="checkbox" id="checkboxRegister_2" value="1" name="customer_subscribe" style="width: 15px; height: 17px; vertical-align: sub" /> Đăng ký nhận bản tin</p>
+                            <input type="checkbox" <?php if (isset($_SESSION['register_input'])) {
+                                                        echo 'checked';
+                                                    } ?> id="checkboxRegister_1" name="customer_agree" value="1" style="width: 15px; height: 17px; vertical-align: sub" /> Tôi đồng ý với các <a href="<?php echo SCRIPT_ROOT . '/about/chinh-sach-bao-hanh' ?>" target="_blank">điều khoản của Ivy</a><em class="required">*</em></label>
                         </div>
                     </div>
                     <div class="row">
@@ -169,4 +193,117 @@
 </div>
 <script>
     document.title = "Đăng ký tài khoản  | IVY moda";
+</script>
+<script>
+    const cityElement = document.querySelector('#city');
+    const districtElement = document.querySelector('#district');
+    const wardElement = document.querySelector('#ward');
+    const cityCode = <?php if (isset($_SESSION['register_input']['city'])) {
+                            echo $_SESSION['register_input']['city'];
+                        } else {
+                            echo 'undefined';
+                        } ?>;
+    const districtCode = <?php if (isset($_SESSION['register_input']['district'])) {
+                                echo $_SESSION['register_input']['district'];
+                            } else {
+                                echo 'undefined';
+                            } ?>;
+    const wardCode = <?php if (isset($_SESSION['register_input']['ward'])) {
+                            echo $_SESSION['register_input']['ward'];
+                        } else {
+                            echo 'undefined';
+                        } ?>;
+    const province = {
+        api: 'https://provinces.open-api.vn/api/',
+        handleEvents: function() {
+            const _this = this;
+
+            cityElement.onchange = function() {
+                _this.fetchDistrict(undefined, cityElement.value);
+                _this.fetchWard();
+            }
+
+            districtElement.onchange = function() {
+                _this.fetchWard(undefined, districtElement.value);
+            }
+        },
+        fetchCity: function(city_code) {
+            return fetch(this.api)
+                .then((response) => {
+                    return response.json().then((citys) => {
+                        const htmls = citys.map((city, index) => {
+                            return `<option value="${city.code}" ${ city.code == cityCode ? 'selected' : '' }>${city.name}</option>`
+                        });
+                        cityElement.innerHTML = `<option value="">Chọn Tỉnh/Tp</option>` + htmls.join('');
+                    }).catch((err) => {
+                        console.log(err);
+                    })
+                });
+        },
+        fetchDistrict: function(district_code, city_code) {
+            return fetch(this.api + 'd/')
+                .then((response) => {
+                    return response.json().then((districts) => {
+                        const htmls = districts.map((district, index) => {
+                            return district.province_code == city_code ? `<option value="${district.code}" ${ district.code == districtCode ? 'selected' : '' }>${district.name}</option>` : '';
+                        });
+                        districtElement.innerHTML = `<option value="">Chọn Quận/Huyện</option>` + htmls.join('');
+                    }).catch((err) => {
+                        console.log(err);
+                    })
+                });
+        },
+        fetchWard: function(ward_code, district_code) {
+            return fetch(this.api + 'w/')
+                .then((response) => {
+                    return response.json().then((wards) => {
+                        const htmls = wards.map((ward, index) => {
+                            return ward.district_code == district_code ? `<option value="${ward.code}" ${ ward.code == wardCode ? 'selected' : '' }>${ward.name}</option>` : '';
+                        });
+                        wardElement.innerHTML = `<option value="">Chọn Phường/Xã</option>` + htmls.join('');
+                    }).catch((err) => {
+                        console.log(err);
+                    })
+                });
+        },
+        start: function() {
+            this.fetchCity();
+            this.handleEvents();
+            if (cityCode && districtCode && wardCode) {
+                this.fetchCity(cityCode);
+                this.fetchDistrict(districtCode, cityCode);
+                this.fetchWard(wardCode, districtCode);
+            }
+        }
+    }
+    province.start();
+</script>
+<script>
+    const formElement = document.querySelector('#frm_register');
+    const errorAreaElement = document.querySelector('#error-area');
+    const errorBlockElement = document.querySelector('#error-block');
+    const password = document.querySelector('#customer_pass1');
+    const confirm_password = document.querySelector('#customer_pass2');
+    const checkboxRegister = document.querySelector('#checkboxRegister_1');
+    formElement.onsubmit = function(e) {
+        e.preventDefault();
+        var htmls = '';
+        if (password.value !== confirm_password.value) {
+            errorAreaElement.style.display = 'block';
+            htmls += '<strong>Lỗi!</strong> Mật khẩu không giống nhau<br>';
+        } else if (password.value.length < 6 || password.value.length > 32) {
+            errorAreaElement.style.display = 'block';
+            htmls += '<strong>Lỗi!</strong> Vui lòng nhập mật khẩu độ dài từ 6 tới 32 ký tự<br>';
+        }
+
+        if (!checkboxRegister.checked) {
+            errorAreaElement.style.display = 'block';
+            htmls += '<strong>Lỗi!</strong> Vui lòng đồng ý với các điều khoản của IVY moda.<br>';
+        }
+        if (htmls === '') {
+            formElement.submit();
+        } else {
+            errorBlockElement.innerHTML = htmls;
+        }
+    }
 </script>
