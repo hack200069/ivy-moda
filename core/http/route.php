@@ -119,9 +119,7 @@ class Route
         }
 
         // nếu không khớp với bất kì route nào cả.
-        include_once('view/site/layouts/header.php'); 
-        include_once('view/site/pages/404.php');
-        include_once('view/site/layouts/footer.php'); 
+        $this->__not_found();
         return;
     }
 
@@ -153,5 +151,12 @@ class Route
 
             return;
         }
+    }
+
+    private function __not_found(){
+        include_once('view/site/layouts/header.php'); 
+        include_once('view/site/pages/404.php');
+        include_once('view/site/layouts/footer.php'); 
+        return;
     }
 }

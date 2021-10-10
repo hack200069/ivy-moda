@@ -41,6 +41,28 @@
 <script src="<?php echo SCRIPT_ROOT ?>/public/dist/js/pages/dashboard.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="<?php echo SCRIPT_ROOT ?>/public/dist/js/demo.js"></script>
+<script>
+  var dashboardNavLinkElement = document.querySelector('#dashboard-nav-link');
+  var orderNavLinkElement = document.querySelector('#order-nav-link');
+  var customerNavLinkElement = document.querySelector('#customer-nav-link');
+  var categoryNavLinkElement = document.querySelector('#category-nav-link');
+  var productNavLinkElement = document.querySelector('#product-nav-link');
+  var newsNavLinkElement = document.querySelector('#news-nav-link');
+  var pathName = window.location.pathname;
+  if (pathName.includes('/order')) {
+    orderNavLinkElement.classList.add('active');
+  } else if (pathName.includes('/customer')) {
+    customerNavLinkElement.classList.add('active');
+  } else if (pathName.includes('/category')) {
+    categoryNavLinkElement.classList.add('active');
+  } else if (pathName.includes('/product')) {
+    productNavLinkElement.classList.add('active');
+  } else if (pathName.includes('/news')) {
+    newsNavLinkElement.classList.add('active');
+  } else {
+    dashboardNavLinkElement.classList.add('active');
+  }
+</script>
 </body>
 
 </html>

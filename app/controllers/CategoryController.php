@@ -11,8 +11,24 @@ class CategoryController
     {
         if (isset($_SESSION['user'])) {
             if ($_SESSION['user']['role'] == ADMIN) {
+                $actual_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+                $url_components = parse_url($actual_link);
+                if (isset($url_components['query'])) {
+                    parse_str($url_components['query'], $params);
+                }
+                $categoryModel = new Model_Category();
+                $page_no = 1;
+                if (isset($params['page_no'])) {
+                    $page_no = $params['page_no'];
+                }
+                $q = '';
+                if (isset($params['q'])) {
+                    $q = $params['q'];
+                }
+                $total_pages = $categoryModel->getTotalPage(10, $q);
+                $categories = $categoryModel->getCategoryList($page_no, 10, $q);
                 include_once('view/admin/layouts/header.php');
-                include_once('view/admin/pages/home.php');
+                include_once('view/admin/pages/category/index.php');
                 include_once('view/admin/layouts/footer.php');
                 return;
             } else {
@@ -39,13 +55,19 @@ class CategoryController
         }
     }
 
-    public function edit($slug)
+    public function edit($id)
     {
         if (isset($_SESSION['user'])) {
             if ($_SESSION['user']['role'] == ADMIN) {
-                include_once('view/admin/layouts/header.php');
-                include_once('view/admin/pages/category/edit.php');
-                include_once('view/admin/layouts/footer.php');
+                $categoryModel = new Model_Category();
+                $current_category = $categoryModel->getCategory($id);
+                if (isset($current_category)) {
+                    include_once('view/admin/layouts/header.php');
+                    include_once('view/admin/pages/category/edit.php');
+                    include_once('view/admin/layouts/footer.php');
+                } else {
+                    $this->__not_found();
+                }
                 return;
             } else {
                 return header('Location: ' . SCRIPT_ROOT . '/');
@@ -57,14 +79,34 @@ class CategoryController
 
     public function delete($id)
     {
+        if (isset($_SESSION['user'])) {
+            if ($_SESSION['user']['role'] == ADMIN) {
+                $categoryModel = new Model_Category();
+                $result = $categoryModel->deleteCategory($id);
+                if ($result) {
+                    $_SESSION['delete_category_success'] = 'success';
+                    return header('Location: ' . SCRIPT_ROOT . '/admin/category');
+                }
+                $_SESSION['delete_category_error'] = 'error';
+                return header('Location: ' . SCRIPT_ROOT . '/admin/category');
+            } else {
+                return header('Location: ' . SCRIPT_ROOT . '/');
+            }
+        } else {
+            return header('Location: ' . SCRIPT_ROOT . '/customer/login');
+        }
     }
 
     public function detail($slug)
     {
-        if ($slug === "hang-nam-moi-ve") {
-            include 'view/site/layouts/header.php';
-            include 'view/site/pages/danh_muc.php';
-            include 'view/site/layouts/footer.php';
+        $categoryModel = new Model_Category();
+        $current_category = $categoryModel->getCategoryBySlug($slug);
+        if (isset($current_category)) {
+            include_once('view/site/layouts/header.php');
+            include_once('view/site/pages/danh_muc.php');
+            include_once('view/site/layouts/footer.php');
+        } else {
+            $this->__not_found();
         }
         return;
     }
@@ -121,5 +163,61 @@ class CategoryController
 
     public function submitEdit()
     {
+        $categoryModel = new Model_Category();
+        $categoryEntity = new Entity_Category(
+            $id = null,
+            $name = null,
+            $slug = null,
+            $for_object = null,
+            $parent_category = null,
+            $soft_delete = null,
+        );
+
+        $error = array();
+        $error['name'] = $error['for_object'] = $error['parent_category'] = $error['sthg_wrong'] = NULL;
+        $flag = true;
+        if (empty($_POST['id'])) {
+            $error['sthg_wrong'] = "Có lỗi, vui lòng thử lại sau!";
+            $flag = false;
+        } else {
+            $categoryEntity->id = $_POST['id'];
+        }
+        if (empty($_POST['name'])) {
+            $error['name'] = 'Hãy nhập tên danh mục';
+            $flag = false;
+        } else {
+            $categoryEntity->name = $_POST['name'];
+        }
+        if (empty($_POST['for_object'])) {
+            $error['for_object'] = 'Hãy chọn đối tượng';
+            $flag = false;
+        } else {
+            $categoryEntity->for_object = $_POST['for_object'];
+        }
+        if (empty($_POST['parent_category'])) {
+            $error['parent_category'] = 'Hãy chọn danh mục cha';
+            $flag = false;
+        } else {
+            $categoryEntity->parent_category = $_POST['parent_category'];
+        }
+        if ($flag) {
+            $result = $categoryModel->updateCategory($categoryEntity);
+            if ($result == 1) {
+                $_SESSION['edit_category_success'] = 'success';
+                return header('Location: ' . SCRIPT_ROOT . '/admin/category');
+            } else {
+                $error['sthg_wrong'] = "Có lỗi, vui lòng thử lại sau!";
+            }
+        }
+        $_SESSION['edit_category_error'] = $error;
+        return header('Location: ' . SCRIPT_ROOT . '/admin/category/edit');
+    }
+
+    public function __not_found()
+    {
+        include_once('view/site/layouts/header.php');
+        include_once('view/site/pages/404.php');
+        include_once('view/site/layouts/footer.php');
+        return;
     }
 }

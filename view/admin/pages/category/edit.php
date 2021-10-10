@@ -3,7 +3,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0 text-dark">Thêm danh mục</h1>
+                    <h1 class="m-0 text-dark">Sửa danh mục</h1>
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
@@ -19,26 +19,26 @@
             <div class="row">
                 <div class="col-md-12">
                     <?php
-                        if (!empty($_SESSION['create_category_error'])) {
-                            echo '<div class="alert alert-danger alert-dismissable">
+                    if (!empty($_SESSION['edit_category_error'])) {
+                        echo '<div class="alert alert-danger alert-dismissable">
                             <a href="javascript:void(0)" class="close" data-dismiss="alert" aria-label="close" style="color:#fff; text-decoration: none;">×</a>';
-                        if (isset($_SESSION['create_category_error']['name'])) {
-                            echo '<strong>Lỗi!</strong> ' . $_SESSION['create_category_error']['name'] . '<br>';
-                            unset($_SESSION['create_category_error']['name']);
+                        if (isset($_SESSION['edit_category_error']['name'])) {
+                            echo '<strong>Lỗi!</strong> ' . $_SESSION['edit_category_error']['name'] . '<br>';
+                            unset($_SESSION['edit_category_error']['name']);
                         }
-                        if (isset($_SESSION['create_category_error']['for_object'])) {
-                            echo '<strong>Lỗi!</strong> ' . $_SESSION['create_category_error']['for_object'] . '<br>';
-                            unset($_SESSION['create_category_error']['for_object']);
+                        if (isset($_SESSION['edit_category_error']['for_object'])) {
+                            echo '<strong>Lỗi!</strong> ' . $_SESSION['edit_category_error']['for_object'] . '<br>';
+                            unset($_SESSION['edit_category_error']['for_object']);
                         }
-                        if (isset($_SESSION['create_category_error']['parent_category'])) {
-                            echo '<strong>Lỗi!</strong> ' . $_SESSION['create_category_error']['parent_category'] . '<br>';
-                            unset($_SESSION['create_category_error']['parent_category']);
+                        if (isset($_SESSION['edit_category_error']['parent_category'])) {
+                            echo '<strong>Lỗi!</strong> ' . $_SESSION['edit_category_error']['parent_category'] . '<br>';
+                            unset($_SESSION['edit_category_error']['parent_category']);
                         }
-                        if (isset($_SESSION['create_category_error']['sthg_wrong'])) {
-                            echo '<strong>Lỗi!</strong> ' . $_SESSION['create_category_error']['sthg_wrong'] . '<br>';
-                            unset($_SESSION['create_category_error']['sthg_wrong']);
+                        if (isset($_SESSION['edit_category_error']['sthg_wrong'])) {
+                            echo '<strong>Lỗi!</strong> ' . $_SESSION['edit_category_error']['sthg_wrong'] . '<br>';
+                            unset($_SESSION['edit_category_error']['sthg_wrong']);
                         }
-                        unset($_SESSION['create_category_error']);
+                        unset($_SESSION['edit_category_error']);
                         echo '</div>';
                     }
                     ?>
@@ -48,11 +48,10 @@
                         </div>
                         <div class="card-body">
                             <form method="post">
+                                <input type="hidden" id="id" name="id" value="<?= $current_category['id'] ?>">
                                 <div class="form-group">
                                     <label for="name" class="control-label col-md-2">Tên danh mục</label>
-                                    <input type="text" id="name" name="name" class="form-control" required value="<?php if (isset($_SESSION['create_category_input']['name'])) {
-                                                                                                                        echo $_SESSION['create_category_input']['name'];
-                                                                                                                    } ?>">
+                                    <input type="text" id="name" name="name" class="form-control" required value="<?= $current_category['name'] ?>">
                                 </div>
                                 <div class="form-group">
                                     <label for="for_object" class="control-label col-md-2">Dành cho</label>
@@ -83,21 +82,13 @@
     </section>
 </div>
 <script>
-    document.title = "Thêm danh mục | IVY moda";
+    document.title = "Sửa danh mục | IVY moda";
 </script>
 <script>
-    const forObjectElement = document.querySelector('#for_object');
+const forObjectElement = document.querySelector('#for_object');
     const parentCategoryElement = document.querySelector('#parent_category');
-    const objectCode = <?php if (isset($_SESSION['create_category_input']['for_object'])) {
-                            echo $_SESSION['create_category_input']['for_object'];
-                        } else {
-                            echo 'undefined';
-                        } ?>;
-    const parentCategoryCode = <?php if (isset($_SESSION['create_category_input']['parent_category'])) {
-                                    echo $_SESSION['create_category_input']['parent_category'];
-                                } else {
-                                    echo 'undefined';
-                                } ?>;
+    const objectCode = <?= $current_category['for_object'] ?>;
+    const parentCategoryCode = <?= $current_category['parent_category'] ?>;
     const parentCategory = {
         handleEvents: function() {
             const _this = this;

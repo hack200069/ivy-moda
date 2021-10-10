@@ -67,6 +67,7 @@
 </head>
 
 <body>
+
     <!--TopBar-->
     <!----NAV PC---->
     <nav id="topBar" class="navbar navbar-default">
@@ -77,111 +78,170 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar_center">
                     <li class="dropdown">
-                        <a href="?controller=category" class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false">Nữ</a>
+                        <a href="javascript:void(0)" class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false">Nữ</a>
                         <ul class="dropdown-menu">
-                            <li><a href="?controller=category">H&agrave;ng nữ mới về</a></li>
-                            <li><a href="?controller=category">New Secret</a></li>
-                            <li><a href="?controller=category">Green Leaf</a></li>
-                            <li><a href="?controller=category">Thanh Sắc</a></li>
+                            <?php
+                            foreach (CATEGORY as $c) {
+                                if ($c['for_object'] == 2) {
+                                    if ($c['parent_category'] == 5) {
+                                        echo '<li><a href="' . SCRIPT_ROOT . '/danh-muc/' . $c['slug'] . '">' . $c['name'] . '</a></li>';
+                                    }
+                                }
+                            }
+                            ?>
                             <li>
-                                <a href="#" style="text-transform: uppercase"><b>&Aacute;o</b></a>
+                                <a href="javascript:void(0)" style="text-transform: uppercase"><b>Áo</b></a>
                                 <ul>
-                                    <li><a href="?controller=category">&Aacute;o kiểu</a></li>
-                                    <li><a href="?controller=category">&Aacute;o croptop</a></li>
-                                    <li><a href="?controller=category">&Aacute;o vest nữ</a></li>
-                                    <li><a href="?controller=category">&Aacute;o peplum</a></li>
-                                    <li><a href="?controller=category">&Aacute;o thun nữ</a></li>
-                                    <li><a href="?controller=category">&Aacute;o sơ mi nữ</a></li>
-                                    <li><a href="?controller=category">&Aacute;o kho&aacute;c nữ</a></li>
+                                    <?php
+                                    foreach (CATEGORY as $c) {
+                                        if ($c['for_object'] == 2) {
+                                            if ($c['parent_category'] == 6) {
+                                                echo '<li><a href="' . SCRIPT_ROOT . '/danh-muc/' . $c['slug'] . '">' . $c['name'] . '</a></li>';
+                                            }
+                                        }
+                                    }
+                                    ?>
                                 </ul>
                             </li>
                             <li>
-                                <a href="#" style="text-transform: uppercase"><b>Quần nữ</b></a>
+                                <a href="javascript:void(0)" style="text-transform: uppercase"><b>Quần nữ</b></a>
                                 <ul>
-                                    <li><a href="quan-jean-nu">Quần jeans nữ</a></li>
-                                    <li><a href="quan-lung-short-nu">Quần lửng/short nữ</a></li>
-                                    <li><a href="quan-dai-nu">Quần d&agrave;i nữ</a></li>
+                                    <?php
+                                    foreach (CATEGORY as $c) {
+                                        if ($c['for_object'] == 2) {
+                                            if ($c['parent_category'] == 7) {
+                                                echo '<li><a href="' . SCRIPT_ROOT . '/danh-muc/' . $c['slug'] . '">' . $c['name'] . '</a></li>';
+                                            }
+                                        }
+                                    }
+                                    ?>
                                 </ul>
                             </li>
                             <li>
-                                <a href="#" style="text-transform: uppercase"><b>Đầm nữ</b></a>
+                                <a href="javascript:void(0)" style="text-transform: uppercase"><b>Đầm nữ</b></a>
                                 <ul>
-                                    <li><a href="dam">Đầm</a></li>
-                                    <li><a href="dam-maxi">Đầm maxi</a></li>
-                                    <li><a href="dam-thun-nu">Đầm thun</a></li>
+                                    <?php
+                                    foreach (CATEGORY as $c) {
+                                        if ($c['for_object'] == 2) {
+                                            if ($c['parent_category'] == 8) {
+                                                echo '<li><a href="' . SCRIPT_ROOT . '/danh-muc/' . $c['slug'] . '">' . $c['name'] . '</a></li>';
+                                            }
+                                        }
+                                    }
+                                    ?>
                                 </ul>
                             </li>
-                            <li><a href="zuyp">Zu&yacute;p nữ</a></li>
-                            <li><a href="senora-nu">Senora</a></li>
-                            <li><a href="jumpsuit">Jumpsuit</a></li>
-                            <li><a href="do-lot-nu">Đồ l&oacute;t</a></li>
-                            <li><a href="giay-nu">Gi&agrave;y nữ</a></li>
-                            <li><a href="phu-kien-nu">Phụ kiện nữ</a></li>
-                            <li><a href="do-boi-nu">Đồ bơi</a></li>
-                            <li><a href="tui-nu">T&uacute;i</a></li>
+                            <?php
+                            foreach (CATEGORY as $c) {
+                                if ($c['for_object'] == 2) {
+                                    if ($c['parent_category'] == 9) {
+                                        echo '<li><a href="' . SCRIPT_ROOT . '/danh-muc/' . $c['slug'] . '">' . $c['name'] . '</a></li>';
+                                    }
+                                }
+                            }
+                            ?>
                         </ul>
                     </li>
                     <li class="dropdown">
                         <!-- fixed cho sale -->
-                        <a href="hang-nam-moi-ve" class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false">Nam</a>
+                        <a href="javascript:void(0)" class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false">Nam</a>
                         <ul class="dropdown-menu">
-                            <li><a href="hang-nam-moi-ve">H&agrave;ng nam mới về</a></li>
-                            <li><a href="safe-zone">Safe Zone</a></li>
-                            <li><a href="new-polo-for-men">New Polo for Men</a></li>
+                            <?php
+                            foreach (CATEGORY as $c) {
+                                if ($c['for_object'] == 1) {
+                                    if ($c['parent_category'] == 1) {
+                                        echo '<li><a href="' . SCRIPT_ROOT . '/danh-muc/' . $c['slug'] . '">' . $c['name'] . '</a></li>';
+                                    }
+                                }
+                            }
+                            ?>
                             <li>
-                                <a href="#" style="text-transform: uppercase"><b>&Aacute;o</b></a>
+                                <a href="javascript:void(0)" style="text-transform: uppercase"><b>&Aacute;o</b></a>
                                 <ul>
-                                    <li><a href="ao-so-mi-nam">&Aacute;o sơ mi nam</a></li>
-                                    <li><a href="ao-polo-nam">&Aacute;o polo nam</a></li>
-                                    <li><a href="ao-thun-nam">&Aacute;o thun nam</a></li>
-                                    <li><a href="ao-khoac-nam">&Aacute;o kho&aacute;c nam</a></li>
+                                    <?php
+                                    foreach (CATEGORY as $c) {
+                                        if ($c['for_object'] == 1) {
+                                            if ($c['parent_category'] == 2) {
+                                                echo '<li><a href="' . SCRIPT_ROOT . '/danh-muc/' . $c['slug'] . '">' . $c['name'] . '</a></li>';
+                                            }
+                                        }
+                                    }
+                                    ?>
                                 </ul>
                             </li>
                             <li>
-                                <a href="#" style="text-transform: uppercase"><b>Quần nam</b></a>
+                                <a href="javascript:void(0)" style="text-transform: uppercase"><b>Quần nam</b></a>
                                 <ul>
-                                    <li><a href="quan-jean-nam">Quần jeans nam</a></li>
-                                    <li><a href="quan-lung-nam">Quần lửng/short nam</a></li>
-                                    <li><a href="quan-dai-nam">Quần d&agrave;i nam</a></li>
-                                    <li><a href="quan-khaki-nam">Quần kaki nam </a></li>
-                                    <li><a href="quan-tay-nam">Quần T&acirc;y Nam</a></li>
+                                    <?php
+                                    foreach (CATEGORY as $c) {
+                                        if ($c['for_object'] == 1) {
+                                            if ($c['parent_category'] == 3) {
+                                                echo '<li><a href="' . SCRIPT_ROOT . '/danh-muc/' . $c['slug'] . '">' . $c['name'] . '</a></li>';
+                                            }
+                                        }
+                                    }
+                                    ?>
                                 </ul>
                             </li>
-                            <li><a href="giay-nam">Gi&agrave;y nam</a></li>
-                            <li><a href="phu-kien-nam">Phụ kiện nam</a></li>
+                            <?php
+                            foreach (CATEGORY as $c) {
+                                if ($c['for_object'] == 1) {
+                                    if ($c['parent_category'] == 4) {
+                                        echo '<li><a href="' . SCRIPT_ROOT . '/danh-muc/' . $c['slug'] . '">' . $c['name'] . '</a></li>';
+                                    }
+                                }
+                            }
+                            ?>
                         </ul>
                     </li>
                     <li class="dropdown">
-                        <a href="hang-moi-ve-tre-em" class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false">Trẻ em</a>
+                        <a href="javascript:void(0)" class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false">Trẻ em</a>
                         <ul class="dropdown-menu">
-                            <li><a href="hang-moi-ve-tre-em">H&agrave;ng mới về trẻ em</a></li>
-                            <li><a href="draw-the-dream">Draw the Dream</a></li>
+                            <?php
+                            foreach (CATEGORY as $c) {
+                                if ($c['for_object'] == 3) {
+                                    if ($c['parent_category'] == 10) {
+                                        echo '<li><a href="' . SCRIPT_ROOT . '/danh-muc/' . $c['slug'] . '">' . $c['name'] . '</a></li>';
+                                    }
+                                }
+                            }
+                            ?>
                             <li>
-                                <a href="#" style="text-transform: uppercase"><b>B&eacute; g&aacute;i</b></a>
+                                <a href="javascript:void(0)" style="text-transform: uppercase"><b>Bé gái</b></a>
                                 <ul>
-                                    <li><a href="quan-be-gai">Quần b&eacute; g&aacute;i</a></li>
-                                    <li><a href="vay-be-gai">V&aacute;y</a></li>
-                                    <li><a href="Zuyp-be-gai">Zu&yacute;p b&eacute; g&aacute;i</a></li>
-                                    <li><a href="ao-be-gai">&Aacute;o b&eacute; g&aacute;i</a></li>
-                                    <li><a href="phu-kien-be-gai">Phụ kiện b&eacute; g&aacute;i</a></li>
+                                    <?php
+                                    foreach (CATEGORY as $c) {
+                                        if ($c['for_object'] == 3) {
+                                            if ($c['parent_category'] == 11) {
+                                                echo '<li><a href="' . SCRIPT_ROOT . '/danh-muc/' . $c['slug'] . '">' . $c['name'] . '</a></li>';
+                                            }
+                                        }
+                                    }
+                                    ?>
                                 </ul>
                             </li>
                             <li>
-                                <a href="#" style="text-transform: uppercase"><b>B&eacute; trai</b></a>
+                                <a href="javascript:void(0)" style="text-transform: uppercase"><b>Bé trai</b></a>
                                 <ul>
-                                    <li><a href="quan-be-trai">Quần b&eacute; trai</a></li>
-                                    <li><a href="ao-be-trai">&Aacute;o b&eacute; trai</a></li>
-                                    <li><a href="phu-kien-be-trai">Phụ kiện b&eacute; trai</a></li>
+                                    <?php
+                                    foreach (CATEGORY as $c) {
+                                        if ($c['for_object'] == 3) {
+                                            if ($c['parent_category'] == 12) {
+                                                echo '<li><a href="' . SCRIPT_ROOT . '/danh-muc/' . $c['slug'] . '">' . $c['name'] . '</a></li>';
+                                            }
+                                        }
+                                    }
+                                    ?>
                                 </ul>
                             </li>
                         </ul>
                     </li>
                     <li class="dropdown">
-                        <a href="sale" style="color:red" class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false">Sale 50%++</a>
+                        <a href="javascript:void(0)" style="color:red" class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false">Sale 50%++</a>
                         <ul class="dropdown-menu">
-                            <li><a href="sale-nu">Nữ</a></li>
-                            <li><a href="sale-nam">Nam</a></li>
-                            <li><a href="sale-tre-em">Trẻ em</a></li>
+                            <li><a href="<?= SCRIPT_ROOT ?>/danh-muc/sale-nu">Nữ</a></li>
+                            <li><a href="<?= SCRIPT_ROOT ?>/danh-muc/sale-nam">Nam</a></li>
+                            <li><a href="<?= SCRIPT_ROOT ?>/danh-muc/sale-tre-em">Trẻ em</a></li>
                         </ul>
                     </li>
                     <li class="dropdown">
@@ -204,7 +264,7 @@
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <form enctype="application/x-www-form-urlencoded" method="get" action="https://ivymoda.com/tim-kiem" name="frm_search">
+                        <form action="<?= SCRIPT_ROOT ?>/tim-kiem" name="frm_search">
                             <div class="input-group">
                                 <input type="text" class="form-control" name="q" placeholder="tìm kiếm" title="tìm kiếm">
                                 <span class="input-group-btn">
@@ -217,22 +277,22 @@
                     if (isset($_SESSION['user'])) {
                         echo '
                             <li class="dropdown">
-                                <a class="dropdown-toggle" href="https://ivymoda.com/customer/info" title="Cập nhật tài khoản ' . $_SESSION['user']['first_name'] . ' ' . $_SESSION['user']['last_name'] . '">Tài khoản</a>
+                                <a class="dropdown-toggle" href="' . SCRIPT_ROOT . '/customer/info" title="Cập nhật tài khoản ' . $_SESSION['user']['first_name'] . ' ' . $_SESSION['user']['last_name'] . '">Tài khoản</a>
                                 <ul class="dropdown-menu" style="width: 180px">
                                     ';
-                        if($_SESSION['user']['role'] == ADMIN){
+                        if ($_SESSION['user']['role'] == ADMIN) {
                             echo '<li style="padding: 5px 5px 0px 5px;"><a href="' . SCRIPT_ROOT . '/admin">Quản lý website</a></li>';
                         }
                         echo '
-                                    <li style="padding: 5px 5px 0px 5px;"><a href="https://ivymoda.com/customer/info">Tài khoản của tôi</a></li>
-                                    <li style="padding: 5px 5px 0px 5px;"><a href="https://ivymoda.com/customer/order_list">Đơn mua</a></li>
+                                    <li style="padding: 5px 5px 0px 5px;"><a href="' . SCRIPT_ROOT . '/customer/info">Tài khoản của tôi</a></li>
+                                    <li style="padding: 5px 5px 0px 5px;"><a href="' . SCRIPT_ROOT . '/customer/order_list">Đơn mua</a></li>
                                     <li style="text-align: left; padding: 5px 5px 0px 5px;"><a href="' . SCRIPT_ROOT . '/customer/logout">Đăng xuất</a></li>
                                 </ul>
                             </li>
                             ';
                     } else {
                         echo '
-                            <li><a href="https://ivymoda.com/page/order_find" title="Tra cứu đơn hàng"><i class="fa fa-paw"></i></a></li>
+                            <li><a href="' . SCRIPT_ROOT . '/page/order_find" title="Tra cứu đơn hàng"><i class="fa fa-paw"></i></a></li>
                             <li>
                                 <a href="' . SCRIPT_ROOT . '/customer/login"><i class="fa fa-user" aria-hidden="true"></i></a></a>
                             </li>
@@ -240,7 +300,7 @@
                     }
                     ?>
                     <li class="dropdown">
-                        <a href="https://ivymoda.com/thanhtoan/giohang">
+                        <a href="<?= SCRIPT_ROOT ?>/thanhtoan/giohang">
                             <i class="fa fa-shopping-bag" aria-hidden="true"></i>
                             <span></span>
                         </a>
@@ -300,8 +360,8 @@
     <div id="nav_mobile">
         <a href="<?php echo SCRIPT_ROOT ?>"><?php echo '<img src="' . SCRIPT_ROOT . '/public/images/logo.png" />'; ?></a>
         <div class="cart_mobile">
-            <a href="https://ivymoda.com/page/order_find" title="Tra cứu đơn hàng"><i class="fa fa-paw"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
-            <a href="https://ivymoda.com/thanhtoan/giohang"><i class="fa fa-shopping-bag" aria-hidden="true"></i><span> </span></a>
+            <a href="<?= SCRIPT_ROOT ?>/page/order_find" title="Tra cứu đơn hàng"><i class="fa fa-paw"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="<?= SCRIPT_ROOT ?>/thanhtoan/giohang"><i class="fa fa-shopping-bag" aria-hidden="true"></i><span> </span></a>
         </div>
         <!--MENU_VER-->
         <div class="nav-side-menu">
@@ -310,12 +370,12 @@
                 <div class="login_mobile">
                     <?php
                     if (isset($_SESSION['user'])) {
-                        if($_SESSION['user']['role'] == ADMIN){
+                        if ($_SESSION['user']['role'] == ADMIN) {
                             echo '<p style="padding: 5px"><a href="' . SCRIPT_ROOT . '/admin">Quản lý website</a></p>';
                         }
                         echo '
-                            <p style="padding: 5px"><a href="https://ivymoda.com/customer/info">Tài khoản của tôi</a></p>
-                            <p style="padding: 5px"><a href="https://ivymoda.com/customer/order_list">Đơn mua</a></p>
+                            <p style="padding: 5px"><a href="' . SCRIPT_ROOT . '/customer/info">Tài khoản của tôi</a></p>
+                            <p style="padding: 5px"><a href="' . SCRIPT_ROOT . '/customer/order_list">Đơn mua</a></p>
                             <p style="padding: 5px"><a href="' . SCRIPT_ROOT . '/customer/logout">Đăng xuất</a></p>
                             ';
                     } else {
@@ -330,133 +390,167 @@
                         <a>Nữ</a> <span class="arrow" data-toggle="collapse" data-target="#cat_1" class="collapsed"></span>
                     </li>
                     <ul class="sub-menu collapse" id="cat_1">
-                        <li><a href="hang-nu-moi-ve">H&agrave;ng nữ mới về</a></li>
-                        <li><a href="new-secret">New Secret</a></li>
-                        <li><a href="green-leaf">Green Leaf</a></li>
-                        <li><a href="thanh-sac">Thanh Sắc</a></li>
+                        <?php
+                        foreach (CATEGORY as $c) {
+                            if ($c['for_object'] == 2) {
+                                if ($c['parent_category'] == 5) {
+                                    echo '<li><a href="' . SCRIPT_ROOT . '/danh-muc/' . $c['slug'] . '">' . $c['name'] . '</a></li>';
+                                }
+                            }
+                        }
+                        ?>
                         <li>
-                            <a href="#" style="text-transform: uppercase"><b>&Aacute;o</b></a>
-                            <ul>
-                                <li><a href="ao-kieu-nu">&Aacute;o kiểu</a></li>
-                                <li><a href="ao-croptop">&Aacute;o croptop</a></li>
-                                <li><a href="ao-vest-nu">&Aacute;o vest nữ</a></li>
-                                <li><a href="ao-peplum-nu">&Aacute;o peplum</a></li>
-                                <li><a href="ao-thun-nu">&Aacute;o thun nữ</a></li>
-                                <li><a href="ao-so-mi-nu">&Aacute;o sơ mi nữ</a></li>
-                                <li><a href="ao-khoac-nu">&Aacute;o kho&aacute;c nữ</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#" style="text-transform: uppercase"><b>Quần nữ</b></a>
-                            <ul>
-                                <li><a href="quan-jean-nu">Quần jeans nữ</a></li>
-                                <li><a href="quan-lung-short-nu">Quần lửng/short nữ</a></li>
-                                <li><a href="quan-dai-nu">Quần d&agrave;i nữ</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#" style="text-transform: uppercase"><b>Đầm nữ</b></a>
-                            <ul>
-                                <li><a href="dam">Đầm</a></li>
-                                <li><a href="dam-maxi">Đầm maxi</a></li>
-                                <li><a href="dam-thun-nu">Đầm thun</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="zuyp">Zu&yacute;p nữ</a></li>
-                        <li><a href="senora-nu">Senora</a></li>
-                        <li><a href="jumpsuit">Jumpsuit</a></li>
-                        <li><a href="do-lot-nu">Đồ l&oacute;t</a></li>
-                        <li><a href="giay-nu">Gi&agrave;y nữ</a></li>
-                        <li><a href="phu-kien-nu">Phụ kiện nữ</a></li>
-                        <li><a href="do-boi-nu">Đồ bơi</a></li>
-                        <li><a href="tui-nu">T&uacute;i</a></li>
+                                <a href="javascript:void(0)" style="text-transform: uppercase"><b>Áo</b></a>
+                                <ul>
+                                    <?php
+                                    foreach (CATEGORY as $c) {
+                                        if ($c['for_object'] == 2) {
+                                            if ($c['parent_category'] == 6) {
+                                                echo '<li><a href="' . SCRIPT_ROOT . '/danh-muc/' . $c['slug'] . '">' . $c['name'] . '</a></li>';
+                                            }
+                                        }
+                                    }
+                                    ?>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" style="text-transform: uppercase"><b>Quần nữ</b></a>
+                                <ul>
+                                    <?php
+                                    foreach (CATEGORY as $c) {
+                                        if ($c['for_object'] == 2) {
+                                            if ($c['parent_category'] == 7) {
+                                                echo '<li><a href="' . SCRIPT_ROOT . '/danh-muc/' . $c['slug'] . '">' . $c['name'] . '</a></li>';
+                                            }
+                                        }
+                                    }
+                                    ?>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" style="text-transform: uppercase"><b>Đầm nữ</b></a>
+                                <ul>
+                                    <?php
+                                    foreach (CATEGORY as $c) {
+                                        if ($c['for_object'] == 2) {
+                                            if ($c['parent_category'] == 8) {
+                                                echo '<li><a href="' . SCRIPT_ROOT . '/danh-muc/' . $c['slug'] . '">' . $c['name'] . '</a></li>';
+                                            }
+                                        }
+                                    }
+                                    ?>
+                                </ul>
+                            </li>
+                            <?php
+                            foreach (CATEGORY as $c) {
+                                if ($c['for_object'] == 2) {
+                                    if ($c['parent_category'] == 9) {
+                                        echo '<li><a href="' . SCRIPT_ROOT . '/danh-muc/' . $c['slug'] . '">' . $c['name'] . '</a></li>';
+                                    }
+                                }
+                            }
+                            ?>
                     </ul>
                     <li data-toggle="collapse" data-target="#cat_2" class="collapsed">
                         <a>Nam</a> <span class="arrow" data-toggle="collapse" data-target="#cat_2" class="collapsed"></span>
                     </li>
                     <ul class="sub-menu collapse" id="cat_2">
-                        <li><a href="hang-nam-moi-ve">H&agrave;ng nam mới về</a></li>
-                        <li><a href="safe-zone">Safe Zone</a></li>
-                        <li><a href="new-polo-for-men">New Polo for Men</a></li>
-                        <li>
-                            <a href="#" style="text-transform: uppercase"><b>&Aacute;o</b></a>
-                            <ul>
-                                <li><a href="ao-so-mi-nam">&Aacute;o sơ mi nam</a></li>
-                                <li><a href="ao-polo-nam">&Aacute;o polo nam</a></li>
-                                <li><a href="ao-thun-nam">&Aacute;o thun nam</a></li>
-                                <li><a href="ao-khoac-nam">&Aacute;o kho&aacute;c nam</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#" style="text-transform: uppercase"><b>Quần nam</b></a>
-                            <ul>
-                                <li><a href="quan-jean-nam">Quần jeans nam</a></li>
-                                <li><a href="quan-lung-nam">Quần lửng/short nam</a></li>
-                                <li><a href="quan-dai-nam">Quần d&agrave;i nam</a></li>
-                                <li><a href="quan-khaki-nam">Quần kaki nam </a></li>
-                                <li><a href="quan-tay-nam">Quần T&acirc;y Nam</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="giay-nam">Gi&agrave;y nam</a></li>
-                        <li><a href="phu-kien-nam">Phụ kiện nam</a></li>
+                    <?php
+                            foreach (CATEGORY as $c) {
+                                if ($c['for_object'] == 1) {
+                                    if ($c['parent_category'] == 1) {
+                                        echo '<li><a href="' . SCRIPT_ROOT . '/danh-muc/' . $c['slug'] . '">' . $c['name'] . '</a></li>';
+                                    }
+                                }
+                            }
+                            ?>
+                            <li>
+                                <a href="javascript:void(0)" style="text-transform: uppercase"><b>&Aacute;o</b></a>
+                                <ul>
+                                    <?php
+                                    foreach (CATEGORY as $c) {
+                                        if ($c['for_object'] == 1) {
+                                            if ($c['parent_category'] == 2) {
+                                                echo '<li><a href="' . SCRIPT_ROOT . '/danh-muc/' . $c['slug'] . '">' . $c['name'] . '</a></li>';
+                                            }
+                                        }
+                                    }
+                                    ?>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" style="text-transform: uppercase"><b>Quần nam</b></a>
+                                <ul>
+                                    <?php
+                                    foreach (CATEGORY as $c) {
+                                        if ($c['for_object'] == 1) {
+                                            if ($c['parent_category'] == 3) {
+                                                echo '<li><a href="' . SCRIPT_ROOT . '/danh-muc/' . $c['slug'] . '">' . $c['name'] . '</a></li>';
+                                            }
+                                        }
+                                    }
+                                    ?>
+                                </ul>
+                            </li>
+                            <?php
+                            foreach (CATEGORY as $c) {
+                                if ($c['for_object'] == 1) {
+                                    if ($c['parent_category'] == 4) {
+                                        echo '<li><a href="' . SCRIPT_ROOT . '/danh-muc/' . $c['slug'] . '">' . $c['name'] . '</a></li>';
+                                    }
+                                }
+                            }
+                            ?>
                     </ul>
                     <li data-toggle="collapse" data-target="#cat_3" class="collapsed">
                         <a>Trẻ em</a> <span class="arrow" data-toggle="collapse" data-target="#cat_3" class="collapsed"></span>
                     </li>
                     <ul class="sub-menu collapse" id="cat_3">
-                        <li><a href="hang-moi-ve-tre-em">H&agrave;ng mới về trẻ em</a></li>
-                        <li><a href="draw-the-dream">Draw the Dream</a></li>
-                        <li>
-                            <a href="#" style="text-transform: uppercase"><b>B&eacute; g&aacute;i</b></a>
-                            <ul>
-                                <li><a href="quan-be-gai">Quần b&eacute; g&aacute;i</a></li>
-                                <li><a href="vay-be-gai">V&aacute;y</a></li>
-                                <li><a href="Zuyp-be-gai">Zu&yacute;p b&eacute; g&aacute;i</a></li>
-                                <li><a href="ao-be-gai">&Aacute;o b&eacute; g&aacute;i</a></li>
-                                <li><a href="phu-kien-be-gai">Phụ kiện b&eacute; g&aacute;i</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#" style="text-transform: uppercase"><b>B&eacute; trai</b></a>
-                            <ul>
-                                <li><a href="quan-be-trai">Quần b&eacute; trai</a></li>
-                                <li><a href="ao-be-trai">&Aacute;o b&eacute; trai</a></li>
-                                <li><a href="phu-kien-be-trai">Phụ kiện b&eacute; trai</a></li>
-                            </ul>
-                        </li>
+                    <?php
+                            foreach (CATEGORY as $c) {
+                                if ($c['for_object'] == 3) {
+                                    if ($c['parent_category'] == 10) {
+                                        echo '<li><a href="' . SCRIPT_ROOT . '/danh-muc/' . $c['slug'] . '">' . $c['name'] . '</a></li>';
+                                    }
+                                }
+                            }
+                            ?>
+                            <li>
+                                <a href="javascript:void(0)" style="text-transform: uppercase"><b>Bé gái</b></a>
+                                <ul>
+                                    <?php
+                                    foreach (CATEGORY as $c) {
+                                        if ($c['for_object'] == 3) {
+                                            if ($c['parent_category'] == 11) {
+                                                echo '<li><a href="' . SCRIPT_ROOT . '/danh-muc/' . $c['slug'] . '">' . $c['name'] . '</a></li>';
+                                            }
+                                        }
+                                    }
+                                    ?>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" style="text-transform: uppercase"><b>Bé trai</b></a>
+                                <ul>
+                                    <?php
+                                    foreach (CATEGORY as $c) {
+                                        if ($c['for_object'] == 3) {
+                                            if ($c['parent_category'] == 12) {
+                                                echo '<li><a href="' . SCRIPT_ROOT . '/danh-muc/' . $c['slug'] . '">' . $c['name'] . '</a></li>';
+                                            }
+                                        }
+                                    }
+                                    ?>
+                                </ul>
+                            </li>
                     </ul>
                     <li data-toggle="collapse" data-target="#cat_35" class="collapsed">
                         <a style="color:red !important;">Sale 50%++</a> <span class="arrow" data-toggle="collapse" data-target="#cat_35" class="collapsed"></span>
                     </li>
                     <ul class="sub-menu collapse" id="cat_35">
-                        <li><a href="sale-nu">Nữ</a></li>
-                        <li><a href="sale-nam">Nam</a></li>
-                        <li><a href="sale-tre-em">Trẻ em</a></li>
-                    </ul>
-                    <li data-toggle="collapse" data-target="#xuhuong" class="collapsed">
-                        <a>Bộ sưu tập</a> <span class="arrow"></span>
-                    </li>
-                    <ul class="sub-menu collapse" id="xuhuong">
-                        <li><a href="https://ivymoda.com/lookbook/draw-the-dream-117">Draw the Dream</a></li>
-                        <li><a href="https://ivymoda.com/lookbook/new-polo-for-men-120">New Polo for Men</a></li>
-                        <li><a href="https://ivymoda.com/lookbook/flourish18-men-115">Flourish18 - Men</a></li>
-                        <li><a href="https://ivymoda.com/lookbook/nature-soft-113">Nature Soft</a></li>
-                        <li><a href="https://ivymoda.com/lookbook/living-in-the-city-hai-phong-100">Living in the City - Hai Phong</a></li>
-                        <li><a href="https://ivymoda.com/lookbook/office-chic-121">Office Chic</a></li>
-                        <li><a href="https://ivymoda.com/lookbook/indoor-fun-60">Indoor Fun</a></li>
-                        <li><a href="https://ivymoda.com/lookbook/beyond-trendy-119">Beyond Trendy</a></li>
-                        <li><a href="https://ivymoda.com/lookbook/le-jardin-fleuri-118">Le Jardin Fleuri</a></li>
-                        <li><a href="https://ivymoda.com/lookbook/jeans-for-joy-116">Jeans for Joy</a></li>
-                        <li><a href="https://ivymoda.com/lookbook/flourish18-114">Flourish18</a></li>
-                        <li><a href="https://ivymoda.com/lookbook/ladys-portrait-112">Lady&#039;s Portrait</a></li>
-                        <li><a href="https://ivymoda.com/lookbook/flourish18-on-the-street-122">Flourish18 - On the Street</a></li>
-                        <li><a href="https://ivymoda.com/lookbook/my-valentine-111">My Valentine</a></li>
-                        <li><a href="https://ivymoda.com/lookbook/beautiful-time-110">Beautiful Time</a></li>
-                        <li><a href="https://ivymoda.com/lookbook/merino-wool-collection-2021-109">Merino Wool Collection 2021</a></li>
-                        <li><a href="https://ivymoda.com/lookbook/new-years-celebration-108">New Year&#039;s Celebration</a></li>
-                        <li><a href="https://ivymoda.com/lookbook/orchid-in-the-castle-107">Orchid in the Castle</a></li>
-                        <li><a href="https://ivymoda.com/lookbook/orchid-muse-104">Orchid Muse</a></li>
-                        <li><a href="https://ivymoda.com/lookbook/tom-jerry-collection-93">Tom &amp; Jerry Collection</a></li>
+                        <li><a href="<?= SCRIPT_ROOT ?>/danh-muc/sale-nu">Nữ</a></li>
+                        <li><a href="<?= SCRIPT_ROOT ?>/danh-muc/sale-nam">Nam</a></li>
+                        <li><a href="<?= SCRIPT_ROOT ?>/danh-muc/sale-tre-em">Trẻ em</a></li>
                     </ul>
                     <li data-toggle="collapse" data-target="#ivyLifeStyle" class="collapsed">
                         <?php echo '<a href="' . SCRIPT_ROOT . '/tin-tuc/tin-chinh">Tin tức</a>' ?> <span class="arrow"></span>
@@ -495,7 +589,7 @@
 
     <!--SEARCH_MOBLIE------------->
     <div id="search_mobile" class="col-md-12">
-        <form enctype="application/x-www-form-urlencoded" name="f_search_mobile" action="https://ivymoda.com/tim-kiem" method="get">
+        <form enctype="application/x-www-form-urlencoded" name="f_search_mobile" action="<?= SCRIPT_ROOT ?>/tim-kiem" method="get">
             <input type="text" name="q" title="tìm kiếm" />
             <button type="submit">Tìm kiếm</button>
         </form>
