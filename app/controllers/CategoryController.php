@@ -4,6 +4,9 @@ namespace App\Controllers;
 
 use App\Models\Model_Category;
 use App\Models\Entity_Category;
+use App\Models\Model_Image;
+use App\Models\Model_Product;
+use App\Models\Model_ProductCategory;
 
 class CategoryController
 {
@@ -100,7 +103,21 @@ class CategoryController
     public function detail($slug)
     {
         $categoryModel = new Model_Category();
+        $productModel = new Model_Product();
+        $imageModel = new Model_Image();
         $current_category = $categoryModel->getCategoryBySlug($slug);
+
+        $actual_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+        $url_components = parse_url($actual_link);
+        if (isset($url_components['query'])) {
+            parse_str($url_components['query'], $params);
+        }
+        $page_no = 1;
+        if (isset($params['page_no'])) {
+            $page_no = $params['page_no'];
+        }
+        $total_pages = $productModel->getTotalPageByCategoryId(12, $current_category['id']);
+        $products = $productModel->getProductListByCategoryId($page_no, 12, $current_category['id']);
         if (isset($current_category)) {
             include_once('view/site/layouts/header.php');
             include_once('view/site/pages/danh_muc.php');
@@ -108,6 +125,34 @@ class CategoryController
         } else {
             $this->__not_found();
         }
+        return;
+    }
+
+    public function sale($slug)
+    {
+        $productModel = new Model_Product();
+        $imageModel = new Model_Image();
+        $actual_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+        $url_components = parse_url($actual_link);
+        if (isset($url_components['query'])) {
+            parse_str($url_components['query'], $params);
+        }
+        $page_no = 1;
+        if (isset($params['page_no'])) {
+            $page_no = $params['page_no'];
+        }
+        $total_pages = $productModel->getTotalPageBySaleObject(12, $slug);
+        $products = $productModel->getProductListBySaleObject($page_no, 12, $slug);
+        $title = 'Sale nam';
+        if($slug == 'sale-nu'){
+            $title = 'Sale nữ';
+        }
+        if($slug == 'sale-tre-em'){
+            $title = 'Sale trẻ em';
+        }
+        include_once('view/site/layouts/header.php');
+        include_once('view/site/pages/sale.php');
+        include_once('view/site/layouts/footer.php');
         return;
     }
 

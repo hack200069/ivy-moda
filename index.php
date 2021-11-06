@@ -1,5 +1,6 @@
 <?php
 session_start();
+date_default_timezone_set('Asia/Ho_Chi_Minh');
 include_once('app/models/Database.php');
 $db = new \App\Models\Database();
 

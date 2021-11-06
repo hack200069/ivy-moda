@@ -31,6 +31,136 @@ class AccountController
         include_once('view/site/layouts/footer.php');
     }
 
+    public function info()
+    {
+        if (isset($_SESSION['user'])) {
+            include_once('view/site/layouts/header.php');
+            include_once('view/site/pages/info.php');
+            include_once('view/site/layouts/footer.php');
+            return;
+        } else {
+            return header('Location: ' . SCRIPT_ROOT . '/customer/login');
+        }
+    }
+
+    public function info_edit()
+    {
+        if (isset($_SESSION['user'])) {
+            include_once('view/site/layouts/header.php');
+            include_once('view/site/pages/info_edit.php');
+            include_once('view/site/layouts/footer.php');
+            return;
+        } else {
+            return header('Location: ' . SCRIPT_ROOT . '/customer/login');
+        }
+    }
+
+    public function address_list()
+    {
+        if (isset($_SESSION['user'])) {
+            include_once('view/site/layouts/header.php');
+            include_once('view/site/pages/address_list.php');
+            include_once('view/site/layouts/footer.php');
+            return;
+        } else {
+            return header('Location: ' . SCRIPT_ROOT . '/customer/login');
+        }
+    }
+
+    public function address_edit()
+    {
+        if (isset($_SESSION['user'])) {
+            include_once('view/site/layouts/header.php');
+            include_once('view/site/pages/address_edit.php');
+            include_once('view/site/layouts/footer.php');
+            return;
+        } else {
+            return header('Location: ' . SCRIPT_ROOT . '/customer/login');
+        }
+    }
+
+    public function order_list()
+    {
+        if (isset($_SESSION['user'])) {
+            include_once('view/site/layouts/header.php');
+            include_once('view/site/pages/order_list.php');
+            include_once('view/site/layouts/footer.php');
+            return;
+        } else {
+            return header('Location: ' . SCRIPT_ROOT . '/customer/login');
+        }
+    }
+
+    public function customer()
+    {
+        if (isset($_SESSION['user'])) {
+            if ($_SESSION['user']['role'] == ADMIN) {
+                $actual_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+                $url_components = parse_url($actual_link);
+                if (isset($url_components['query'])) {
+                    parse_str($url_components['query'], $params);
+                }
+                $userModel = new Model_User();
+                $page_no = 1;
+                if (isset($params['page_no'])) {
+                    $page_no = $params['page_no'];
+                }
+                $q = '';
+                if (isset($params['q'])) {
+                    $q = $params['q'];
+                }
+                $total_pages = $userModel->getTotalPage(10, $q);
+                $customers = $userModel->getListCustomer($page_no, 10, $q);
+                include_once('view/admin/layouts/header.php');
+                include_once('view/admin/pages/customer/index.php');
+                include_once('view/admin/layouts/footer.php');
+                return;
+            } else {
+                return header('Location: ' . SCRIPT_ROOT . '/');
+            }
+        } else {
+            return header('Location: ' . SCRIPT_ROOT . '/customer/login');
+        }
+    }
+
+    public function blockCustomer($id){
+        if (isset($_SESSION['user'])) {
+            if ($_SESSION['user']['role'] == ADMIN) {
+                $userModel = new Model_User();
+                $result = $userModel->blockCustomer($id);
+                if ($result) {
+                    $_SESSION['block_customer_success'] = 'success';
+                    return header('Location: ' . SCRIPT_ROOT . '/admin/customer');
+                }
+                $_SESSION['block_customer_error'] = 'error';
+                return header('Location: ' . SCRIPT_ROOT . '/admin/customer');
+            } else {
+                return header('Location: ' . SCRIPT_ROOT . '/');
+            }
+        } else {
+            return header('Location: ' . SCRIPT_ROOT . '/customer/login');
+        }
+    }
+
+    public function unlockCustomer($id){
+        if (isset($_SESSION['user'])) {
+            if ($_SESSION['user']['role'] == ADMIN) {
+                $userModel = new Model_User();
+                $result = $userModel->unlockCustomer($id);
+                if ($result) {
+                    $_SESSION['unlock_customer_success'] = 'success';
+                    return header('Location: ' . SCRIPT_ROOT . '/admin/customer');
+                }
+                $_SESSION['unlock_customer_error'] = 'error';
+                return header('Location: ' . SCRIPT_ROOT . '/admin/customer');
+            } else {
+                return header('Location: ' . SCRIPT_ROOT . '/');
+            }
+        } else {
+            return header('Location: ' . SCRIPT_ROOT . '/customer/login');
+        }
+    }
+
     public function submitLogin()
     {
         $userModel = new Model_User();
@@ -191,7 +321,7 @@ class AccountController
             $result = $userModel->saveUser($userEntity);
             if ($result == 1) {
                 $_SESSION['register_success'] = 'success';
-                if(isset($_SESSION['register_input'])){
+                if (isset($_SESSION['register_input'])) {
                     unset($_SESSION['register_input']);
                 }
                 return header('Location: ' . SCRIPT_ROOT . '/customer/login');

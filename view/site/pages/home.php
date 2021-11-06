@@ -37,3 +37,6 @@
         });
     </script>
     <!--/Slider-->
+    <script>
+        document.title = "Trang chủ | IVY moda";
+    </script>

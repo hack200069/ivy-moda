@@ -21,14 +21,14 @@
 					<!-- small box -->
 					<div class="small-box bg-info">
 						<div class="inner">
-							<h3>150</h3>
+							<h3><?=$total_product?></h3>
 
 							<h4>SẢN PHẨM</h4>
 						</div>
 						<div class="icon">
 							<i class="ion ion-bag"></i>
 						</div>
-						<a href="#" class="small-box-footer">Chi tiết <i class="fas fa-arrow-circle-right"></i></a>
+						<a href="<?= SCRIPT_ROOT.'/admin/product' ?>" class="small-box-footer">Chi tiết <i class="fas fa-arrow-circle-right"></i></a>
 					</div>
 				</div>
 				<!-- ./col -->
@@ -36,14 +36,14 @@
 					<!-- small box -->
 					<div class="small-box bg-success">
 						<div class="inner">
-							<h3>53</h3>
+							<h3><?=$total_order?></h3>
 
 							<h4>ĐƠN HÀNG</h4>
 						</div>
 						<div class="icon">
 							<i class="ion ion-stats-bars"></i>
 						</div>
-						<a href="#" class="small-box-footer">Chi tiết <i class="fas fa-arrow-circle-right"></i></a>
+						<a href="<?= SCRIPT_ROOT.'/admin/order' ?>" class="small-box-footer">Chi tiết <i class="fas fa-arrow-circle-right"></i></a>
 					</div>
 				</div>
 				<!-- ./col -->
@@ -51,14 +51,14 @@
 					<!-- small box -->
 					<div class="small-box bg-warning">
 						<div class="inner">
-							<h3>44</h3>
+							<h3><?=$total_customer?></h3>
 
-							<h4 style="color: #fff">THÀNH VIÊN</h4>
+							<h4 style="color: #fff">KHÁCH HÀNG</h4>
 						</div>
 						<div class="icon">
 							<i class="ion ion-person-add"></i>
 						</div>
-						<a href="#" class="small-box-footer">Chi tiết <i class="fas fa-arrow-circle-right"></i></a>
+						<a href="<?= SCRIPT_ROOT.'/admin/customer' ?>" class="small-box-footer">Chi tiết <i class="fas fa-arrow-circle-right"></i></a>
 					</div>
 				</div>
 				<!-- ./col -->
@@ -66,14 +66,14 @@
 					<!-- small box -->
 					<div class="small-box bg-danger">
 						<div class="inner">
-							<h3>65</h3>
+							<h3><?=$total_news?></h3>
 
 							<h4>TIN TỨC</h4>
 						</div>
 						<div class="icon">
 							<i class="ion ion-pie-graph"></i>
 						</div>
-						<a href="#" class="small-box-footer">Chi tiết <i class="fas fa-arrow-circle-right"></i></a>
+						<a href="<?= SCRIPT_ROOT.'/admin/news' ?>" class="small-box-footer">Chi tiết <i class="fas fa-arrow-circle-right"></i></a>
 					</div>
 				</div>
 				<!-- ./col -->

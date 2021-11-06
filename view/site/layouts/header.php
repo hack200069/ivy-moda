@@ -4,7 +4,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trang chủ | IVY moda</title>
+    <title></title>
     <meta name="description" content="IVY moda - Tuyên ngôn thời trang của bạn. IVY moda là thương hiệu thời trang Việt Nam với mong muốn đem lại vẻ đẹp hiện đại và sự tự tin cho khách hàng, thông qua các dòng sản phẩm thời trang thể hiện cá tính và xu hướng. Một trong những “tôn chỉ” về thiết kế của IVY moda chính là mong muốn khách hàng thể hiện được cá tính của chính mình." />
     <link rel="canonical" href="https://ivymoda.com/" />
     <meta property="og:url" content="https://ivymoda.com/" />
@@ -239,9 +239,9 @@
                     <li class="dropdown">
                         <a href="javascript:void(0)" style="color:red" class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false">Sale 50%++</a>
                         <ul class="dropdown-menu">
-                            <li><a href="<?= SCRIPT_ROOT ?>/danh-muc/sale-nu">Nữ</a></li>
-                            <li><a href="<?= SCRIPT_ROOT ?>/danh-muc/sale-nam">Nam</a></li>
-                            <li><a href="<?= SCRIPT_ROOT ?>/danh-muc/sale-tre-em">Trẻ em</a></li>
+                            <li><a href="<?= SCRIPT_ROOT ?>/sale/sale-nu">Nữ</a></li>
+                            <li><a href="<?= SCRIPT_ROOT ?>/sale/sale-nam">Nam</a></li>
+                            <li><a href="<?= SCRIPT_ROOT ?>/sale/sale-tre-em">Trẻ em</a></li>
                         </ul>
                     </li>
                     <li class="dropdown">
@@ -589,8 +589,8 @@
 
     <!--SEARCH_MOBLIE------------->
     <div id="search_mobile" class="col-md-12">
-        <form enctype="application/x-www-form-urlencoded" name="f_search_mobile" action="<?= SCRIPT_ROOT ?>/tim-kiem" method="get">
-            <input type="text" name="q" title="tìm kiếm" />
+        <form action="<?= SCRIPT_ROOT ?>/tim-kiem" method="get">
+            <input type="text" name="q" title="Tìm kiếm" />
             <button type="submit">Tìm kiếm</button>
         </form>
     </div>

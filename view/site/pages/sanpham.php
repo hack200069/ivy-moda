@@ -4,89 +4,30 @@
 <div id="product_detail" class="row">
     <div class="container">
         <div class="row">
-            <div class="col-md-12" id="dieuhuong">
-                <ul class="list-inline">
-                    <li><a href="https://ivymoda.com/">Trang chủ</a> <span>→</span></li>
-                    <li><a href="https://ivymoda.com/ngam/nam" title="Nam">Nam</a> <span>→</span></li>
-                    <li><a href="https://ivymoda.com/sanpham/quan-lung-vai-phoi-soi-tencel-ms-21e3001-29419" title="Quần lửng vải phối sợi Tencel MS 21E3001">Quần lửng vải phối sợi Tencel MS 21E3001</a> <span>→</span></li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="row">
             <div class="col-md-12">
                 <!--demo4-->
                 <div class="box cf">
                     <div class="left">
                         <span class="demowrap">
-                            <img id="demo4" src="https://pubcdn.ivymoda.com/files/product/thumab/1400/2021/09/11/977bebc9e514e1ed17a2399dcf2f391a.JPG" />
+                            <img id="demo4" src="<?= SCRIPT_ROOT.$images[0]['link'] ?>" />
                         </span>
 
                         <ul id="demo4carousel" class="elastislide-list">
-                            <li><a href="javascript:;"><img src="https://pubcdn.ivymoda.com/files/product/thumab/1400/2021/09/11/977bebc9e514e1ed17a2399dcf2f391a.JPG" data-largeimg="https://pubcdn.ivymoda.com/files/product/thumab/1400/2021/09/11/977bebc9e514e1ed17a2399dcf2f391a.JPG" /></a></li>
-                            <li><a href="javascript:;"><img src="https://pubcdn.ivymoda.com/files/product/thumab/1400/2021/09/11/186efb1137e6ea7f98c1e7e4d6f6599f.JPG" data-largeimg="https://pubcdn.ivymoda.com/files/product/thumab/1400/2021/09/11/186efb1137e6ea7f98c1e7e4d6f6599f.JPG" /></a></li>
-                            <li><a href="javascript:;"><img src="https://pubcdn.ivymoda.com/files/product/thumab/1400/2021/09/11/32696051299409451ebe6822bb3a5a08.JPG" data-largeimg="https://pubcdn.ivymoda.com/files/product/thumab/1400/2021/09/11/32696051299409451ebe6822bb3a5a08.JPG" /></a></li>
-                            <li><a href="javascript:;"><img src="https://pubcdn.ivymoda.com/files/product/thumab/1400/2021/09/11/1133414d164887f719888637154a2c9e.JPG" data-largeimg="https://pubcdn.ivymoda.com/files/product/thumab/1400/2021/09/11/1133414d164887f719888637154a2c9e.JPG" /></a></li>
+                            <?php
+                                foreach($images as $img){
+                                    echo '<li><a href="javascript:void(0)"><img src="'.SCRIPT_ROOT.$img['link'].'" data-largeimg="'.SCRIPT_ROOT.$img['link'].'" /></a></li>';
+                                }
+                            ?>
                         </ul>
 
                     </div>
                     <div class="right">
-                        <h1 class="cat_h1">Quần lửng vải phối sợi Tencel MS 21E3001</h1>
-                        <p class="ID_productDetail">MSP: 21E3001</p>
+                        <h1 class="cat_h1"><?= $current_product['name'] ?></h1>
+                        <p class="ID_productDetail">MSP: <?= substr($current_product['name'], strrpos($current_product['name']," ")) ?></p>
                         <p class="price_productDetail">
-                            <span class="price_productDetail_main"><small id="display_price_org">690.000</small><sup>đ</sup></span>
+                            <span class="price_productDetail_main"><small id="display_price_org"><?= number_format($current_product['price']); ?></small><sup>đ</sup></span>
                             <br><span class="price_coupon_display"></span>
                         </p>
-                        <ul class="list-unstyled color_poductDetail">
-                            <li><span class="size_poductDetail_bold">Màu sắc:</span> <span id="product-color-text"></span></li>
-                            <li>
-                                <ul class="list-inline poductDetail_js_img">
-                                    <li id="product_color_018" class="show-product-color" data-color-current="018" data-color-text="Bạc Hà " data-image-color="https://pubcdn.ivymoda.com/files/product/thumab/1400/2021/09/11/977bebc9e514e1ed17a2399dcf2f391a.JPG" data-size-active="s,m,l,xl,xxl">
-                                        <a href="javascript:;">
-                                            <img src="https://pubcdn.ivymoda.com/images/color/018.png" class="product-color-type" />
-                                            <span class="bg_x bg_x_color"><img src="https://pubcdn.ivymoda.com/images/bg_x.png" /></span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                        <ul class="list-unstyled size_poductDetail">
-                            <li><span class="size_poductDetail_bold">Size:</span> <span id="product-size-text"></span></li>
-                            <li>
-                                <ul class="list-inline poductDetail_js">
-                                    <li id="product_size_s" class="show-product-size" data-size-current="s" data-size-text="s" data-color-active="018">
-                                        <a href="javascript:;">
-                                            <span class="product-size-type">s</span>
-                                            <span class="bg_x bg_x_size"><img src="https://pubcdn.ivymoda.com/images/bg_x.png" /></span>
-                                        </a>
-                                    </li>
-                                    <li id="product_size_m" class="show-product-size" data-size-current="m" data-size-text="m" data-color-active="018">
-                                        <a href="javascript:;">
-                                            <span class="product-size-type">m</span>
-                                            <span class="bg_x bg_x_size"><img src="https://pubcdn.ivymoda.com/images/bg_x.png" /></span>
-                                        </a>
-                                    </li>
-                                    <li id="product_size_l" class="show-product-size" data-size-current="l" data-size-text="l" data-color-active="018">
-                                        <a href="javascript:;">
-                                            <span class="product-size-type">l</span>
-                                            <span class="bg_x bg_x_size"><img src="https://pubcdn.ivymoda.com/images/bg_x.png" /></span>
-                                        </a>
-                                    </li>
-                                    <li id="product_size_xl" class="show-product-size" data-size-current="xl" data-size-text="xl" data-color-active="018">
-                                        <a href="javascript:;">
-                                            <span class="product-size-type">xl</span>
-                                            <span class="bg_x bg_x_size"><img src="https://pubcdn.ivymoda.com/images/bg_x.png" /></span>
-                                        </a>
-                                    </li>
-                                    <li id="product_size_xxl" class="show-product-size" data-size-current="xxl" data-size-text="xxl" data-color-active="018">
-                                        <a href="javascript:;">
-                                            <span class="product-size-type">xxl</span>
-                                            <span class="bg_x bg_x_size"><img src="https://pubcdn.ivymoda.com/images/bg_x.png" /></span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
                         <form name="frm_product_sub" id="frm_product_sub" enctype="application/x-www-form-urlencoded" action="https://ivymoda.com/thanhtoan/giohang" method="post">
                             <p class="value_poductDetail">
                                 <span>Số lượng: </span><input name="product_sub_quantity" type="text" value="1" size="1" />
@@ -104,16 +45,6 @@
                             <input type="hidden" value="" name="hid_size_text" id="hid_size_text">
                             <input type="hidden" value="" name="hid_color_text" id="hid_color_text">
                         </form>
-
-                        <div class="frm_showrom" id="frm_showrom" style="">
-                            <input class="hidden" name="hid_ip" id="hid_ip" value="100.116.106.190">
-                            <input class="hidden" name="hid_login" id="hid_login" value="">
-                            <a class="link-showrom" href="javascript:;" style="padding: 8px; border: 2px solid #BF8A49" id="view_showroom">Tìm tại cửa hàng</a>
-                            <div class="clearfix">&nbsp;</div>
-                            <div class="" style="color: red; display: none" id="msg_cuahang"></div>
-                            <div class="list_cuahang"></div>
-                        </div>
-
 
                         <ul class="list-inline phone_chat_mail">
                             <li class="dropdown">
@@ -395,47 +326,7 @@
                                     <!-- Tab panes -->
                                     <div class="tab-content">
                                         <div role="tabpanel" class="tab-pane active" id="home">
-                                            <p>Quần lửng ngang gối. Có 2 túi phía trước và 2&nbsp;túi có khuy cài&nbsp;phía sau. Nhấn đường ly cố định 2 bên ống quần. Cài phía trước bằng khóa kéo và khuy.</p>
-
-                                            <p>Không chỉ là chất vải Khaki thông thường mà còn&nbsp;được phối 50% sợi Tencel giúp thiết kế có độ mềm, mát hơn quần khaki thông thường. Màu sắc cơ bản, độ dài ngang gối, có thể linh hoạt phối hợp với nhiều trang phục khác nhau trong mùa hè.</p>
-
-                                            <p>Màu sắc:&nbsp;Xanh Oliu -&nbsp;Bạc Hà&nbsp;</p>
-
-                                            <p><strong>Mẫu mặc size 31:</strong></p>
-
-                                            <ul>
-                                                <li><em><strong>Chiều cao:</strong></em>&nbsp;1m86</li>
-                                                <li><em><strong>Cân nặng:</strong></em>&nbsp;75kg</li>
-                                                <li><em><strong>Số đo 3 vòng</strong></em>: 100-82-98 cm</li>
-                                            </ul>
-
-                                            <br>
-                                            <table class="" width="70%">
-                                                <tr>
-                                                    <td style="padding-bottom:5px;"><b>Dòng sản phẩm</b></td>
-                                                    <td style="padding-bottom:5px;">Men</td>
-                                                </tr>
-                                                <tr>
-                                                    <td style="padding-bottom:5px;"><b>Nhóm sản phẩm</b></td>
-                                                    <td style="padding-bottom:5px;">Quần</td>
-                                                </tr>
-                                                <tr>
-                                                    <td style="padding-bottom:5px;"><b>Kiểu dáng</b></td>
-                                                    <td style="padding-bottom:5px;">Khác</td>
-                                                </tr>
-                                                <tr>
-                                                    <td style="padding-bottom:5px;"><b>Độ dài</b></td>
-                                                    <td style="padding-bottom:5px;">Ngang gối</td>
-                                                </tr>
-                                                <tr>
-                                                    <td style="padding-bottom:5px;"><b>Họa tiết</b></td>
-                                                    <td style="padding-bottom:5px;">Trơn</td>
-                                                </tr>
-                                                <tr>
-                                                    <td style="padding-bottom:5px;"><b>Chất liệu</b></td>
-                                                    <td style="padding-bottom:5px;">Khaki</td>
-                                                </tr>
-                                            </table>
+                                            <?= $current_product['description'] ?>
                                         </div>
                                         <div role="tabpanel" class="tab-pane" id="profile">
                                             <p>Chi tiết bảo quản sản phẩm :&nbsp;</p>
@@ -480,51 +371,6 @@
 
                 </div>
                 <hr />
-            </div>
-            <!---->
-            <!---->
-            <!--<div class="clearfix"></div>-->
-            <div class="col-md-12 productDetail_splq">
-                <div class="row">
-                    <div class="col-md-12 products_detail_more" style="margin-bottom:30px;">
-                        <div class="content_product">
-                            <div id="owl-demo_2" class="owl-carousel">
-                                <div class="item">
-                                    <p class="same-key">Màu khác&nbsp;</p>
-                                    <a href="https://ivymoda.com/sanpham/quan-lung-vai-phoi-soi-tencel-ms-21e3001-29418"><img src="https://pubcdn.ivymoda.com/files/product/thumab/400/2021/08/03/1c464d869fab6d1caa9800e2fa89401d.JPG" class="lazy  "></a>
-                                    <div class="title_proDetail">
-                                        <a href="https://ivymoda.com/sanpham/quan-lung-vai-phoi-soi-tencel-ms-21e3001-29418" title="Quần lửng vải phối sợi Tencel MS 21E3001">
-                                            Quần lửng vải phối sợi Tencel MS 21E3001
-                                        </a>
-                                        <p>690.000</p>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-    <!--Share Product-->
-    <ul class="list-unstyled share_productDetail">
-        <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://ivymoda.com/sanpham/quan-lung-vai-phoi-soi-tencel-ms-21e3001-29419" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-    </ul>
-</div>
-<div id="modal_sale" class="modal fade" role="dialog">
-    <div class="modal-dialog modal-sm">
-        <!-- Modal content-->
-        <div class="modal-content">
-            <div class="modal-header" style="padding:0; border: 0px">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="margin-top: 2px; margin-right: 10px">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body" style="">
-                <a href="https://ivymoda.com/customer/login"><img style="margin: 0 auto" src="https://pubcdn.ivymoda.com/images/sale30.png" class="img-responsive" /></a>
             </div>
         </div>
     </div>
@@ -702,48 +548,6 @@
 
     });
 </script>
-
-<script type="text/javascript">
-    var product_sub = '{"s_018":{"product_sub_price":"690.000","product_sub_price_org":"690000","product_sub_status":1,"product_sub_quantity":"6","product_sub_id":"153863","product_sub_sku":"2110E30010180022","coupon_display":"","coupon_price_sale":""},"m_018":{"product_sub_price":"690.000","product_sub_price_org":"690000","product_sub_status":1,"product_sub_quantity":"13","product_sub_id":"153865","product_sub_sku":"2120E30010180022","coupon_display":"","coupon_price_sale":""},"l_018":{"product_sub_price":"690.000","product_sub_price_org":"690000","product_sub_status":1,"product_sub_quantity":"19","product_sub_id":"153867","product_sub_sku":"2130E30010180022","coupon_display":"","coupon_price_sale":""},"xl_018":{"product_sub_price":"690.000","product_sub_price_org":"690000","product_sub_status":1,"product_sub_quantity":"12","product_sub_id":"153869","product_sub_sku":"2140E30010180022","coupon_display":"","coupon_price_sale":""},"xxl_018":{"product_sub_price":"690.000","product_sub_price_org":"690000","product_sub_status":1,"product_sub_quantity":"5","product_sub_id":"153871","product_sub_sku":"2150E30010180022","coupon_display":"","coupon_price_sale":""}}';
-    var product_ids = ["21E3001"];
-    var product_price = '690000';
-    var product_cat_slug = '';
-    var product_name = "Quần lửng vải phối sợi Tencel MS 21E3001";
-    var cat_name = '';
-    product_cat_slug = 'nam';
-    cat_name = "Nam";
-</script>
 <script>
-    fbq("track", "ViewContent", {
-        contents: [{
-            "id": "2110E30010180022",
-            "quantity": "6",
-            "item_price": ""
-        }, {
-            "id": "2120E30010180022",
-            "quantity": "13",
-            "item_price": ""
-        }, {
-            "id": "2130E30010180022",
-            "quantity": "19",
-            "item_price": ""
-        }, {
-            "id": "2140E30010180022",
-            "quantity": "12",
-            "item_price": ""
-        }, {
-            "id": "2150E30010180022",
-            "quantity": "5",
-            "item_price": ""
-        }],
-        content_ids: ["2110E30010180022,2120E30010180022,2130E30010180022,2140E30010180022,2150E30010180022"],
-        content_type: "product",
-        currency: "VND",
-        value: 690000,
-        content_category: "Nam",
-        content_name: "Quần lửng vải phối sợi Tencel MS 21E3001"
-    });
-</script>
-<script>
-    document.title = "Quần lửng vải phối sợi Tencel MS 21E3001 | IVY moda";
+    document.title = "<?= $current_product['name'] ?> | IVY moda";
 </script>

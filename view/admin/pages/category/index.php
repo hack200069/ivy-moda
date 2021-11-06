@@ -64,7 +64,6 @@
                         <div class="col-10">
                             <form method="get">
                                 <div class="input-group rounded">
-                                    <!-- <input type="hidden" name="page_no" value="<?php if (isset($page_no)) echo $page_no ?>"> -->
                                     <input type="search" name="q" class="form-control rounded" value="<?php if (isset($q)) echo $q ?>" placeholder="Tìm kiếm">
                                     <button class="input-group-text border-0" id="search-addon" type="submit"><i class="fas fa-search"></i></button>
                                 </div>
@@ -183,28 +182,6 @@
                     ?>
                 </div>
                 <!-- /.card-body -->
-            </div>
-        </div>
-    </section>
-    <section>
-        <!-- Modal -->
-        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        ...
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
-                    </div>
-                </div>
             </div>
         </div>
     </section>

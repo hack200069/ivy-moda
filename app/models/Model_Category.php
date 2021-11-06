@@ -95,7 +95,10 @@ class Model_Category
     public function getCategoryList($page_no, $no_of_records_per_page, $q)
     {
         $offset = ($page_no - 1) * $no_of_records_per_page;
-        $sql = "SELECT * FROM categories WHERE name LIKE '%$q%' AND soft_delete = 1 LIMIT $offset, $no_of_records_per_page ";
+        $sql = "SELECT * FROM categories 
+        WHERE name LIKE '%$q%' AND soft_delete = 1
+        ORDER BY name 
+        LIMIT $offset, $no_of_records_per_page ";
         $result = $this->db->conn->query($sql);
         $list = array();
         while($data = $result->fetch_array()) {

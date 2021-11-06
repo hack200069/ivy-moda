@@ -1,8 +1,4 @@
 <form name="frm_cat" id="frm_cat" enctype="application/x-www-form-urlencoded" method="get" action="" data-slug="danh-muc/hang-nam-moi-ve">
-    <input type="hidden" name="hid_size" value="" id="hid_size">
-    <input type="hidden" name="hid_color" value="" id="hid_color">
-    <input type="hidden" name="hid_row" value="4" id="hid_row">
-    <input type="hidden" name="hid_status" value="" id="hid_status">
     <div id="products" class="row">
         <div class="container">
             <div class="row">
@@ -13,7 +9,7 @@
                         $forObject = 'Sale';
                         if ($current_category['for_object'] == 1) {
                             $forObject = 'Nam';
-                        }else if ($current_category['for_object'] == 2) {
+                        } else if ($current_category['for_object'] == 2) {
                             $forObject = 'Nữ';
                         } else if ($current_category['for_object'] == 3) {
                             $forObject = 'Trẻ em';
@@ -30,7 +26,7 @@
                     <!--MENU_VER-->
                     <div class="nav-side-menu menu-cat-left">
                         <div class="brand1"><a href="#cat_col_name_1" data-toggle="collapse" aria-expanded="true" aria-controls="cat_col_name_1">Nữ</a></div>
-                        <div class="menu-list collapse <?= $forObject == 'Nữ' ? 'in' : '' ?>" id="cat_col_name_1" >
+                        <div class="menu-list collapse <?= $forObject == 'Nữ' ? 'in' : '' ?>" id="cat_col_name_1">
                             <ul id="menu-content" class="menu-content out">
                                 <?php
                                 foreach (CATEGORY as $c) {
@@ -220,67 +216,30 @@
                         <div class="col-md-6 col-sm-6">
                             <h1 class="cat_h1"><?= $current_category['name'] ?></h1>
                         </div>
-                        <div class="col-md-6 col-sm-6">
-                            <div class="row">
-                                <div class="col-md-6 col-sm-6 col-xs-12 filter_show">
-                                </div>
-                                <div class="col-md-6 col-sm-6 col-xs-12">
-                                    <select size="1" id="sel_order" name="sel_order">
-                                        <option value="">Sắp xếp</option>
-                                        <option value="price_desc">Giá: cao đến thấp</option>
-                                        <option value="price_asc">Giá: thấp đến cao</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
                         <div class="clearfix"></div>
                         <div class="col-md-12">
                             <div class="row">
-                                <div class="col-md-3 col-sm-4 col-xs-6">
-                                    <a href="#"><img data-original="https://pubcdn.ivymoda.com/files/product/thumab/400/2021/09/11/977bebc9e514e1ed17a2399dcf2f391a.JPG" class="lazy " /></a>
-                                    <div class="title_product"><a href="#">Quần lửng vải phối sợi Tencel MS 21E3001</a></div>
-                                    <div class="price_product text-center">
-                                        <span class="price_product_sale">690.000 <sup>đ</sup></span>
-                                    </div>
-                                    <div class="new_product text-center">
-                                        &nbsp;<span>_new_&nbsp;
-                                        </span>
-                                    </div>
-                                </div>
-                                <div class="col-md-3 col-sm-4 col-xs-6">
-                                    <a href="#"><img data-original="https://pubcdn.ivymoda.com/files/product/thumab/400/2021/09/11/0ade958448b978646d867be4a4cfde63.JPG" class="lazy " /></a>
-                                    <div class="title_product"><a href="#">Quần lửng khaki dáng Regular MS 21E3016</a></div>
-                                    <div class="price_product text-center">
-                                        <span class="price_product_sale">990.000 <sup>đ</sup></span>
-                                    </div>
-                                    <div class="new_product text-center">
-                                        &nbsp;<span>_new_&nbsp;
-                                        </span>
-                                    </div>
-                                </div>
-                                <div class="col-md-3 col-sm-4 col-xs-6">
-                                    <a href="#"><img data-original="https://pubcdn.ivymoda.com/files/product/thumab/400/2021/09/11/8e5d495f91f562e48d76ae9b904c9b81.JPG" class="lazy " /></a>
-                                    <div class="title_product"><a href="#">Quần lửng nam khaki MS 21E3000</a></div>
-                                    <div class="price_product text-center">
-                                        <span class="price_product_sale">890.000 <sup>đ</sup></span>
-                                    </div>
-                                    <div class="new_product text-center">
-                                        &nbsp;<span>_new_&nbsp;
-                                        </span>
-                                    </div>
-                                </div>
-                                <div class="col-md-3 col-sm-4 col-xs-6">
-                                    <a href="#"><img data-original="https://pubcdn.ivymoda.com/files/product/thumab/400/2021/09/10/719e39d99508e40510a35d405c16d8d4.JPG" class="lazy " /></a>
-                                    <div class="title_product"><a href="#">Quần lửng nam khaki MS 21E3000</a></div>
-                                    <div class="price_product text-center">
-                                        <span class="price_product_sale">890.000 <sup>đ</sup></span>
-                                    </div>
-                                    <div class="new_product text-center">
-                                        &nbsp;<span>_new_&nbsp;
-                                        </span>
-                                    </div>
-                                </div>
-
+                                <?php
+                                foreach ($products as $product) {
+                                    if($product['discount_fifty_percent'] == 0){
+                                        echo '<div class="col-md-3 col-sm-4 col-xs-6">';
+                                        echo '<a href="' . SCRIPT_ROOT . '/sanpham/' . $product['slug'] . '"><img data-original="' . SCRIPT_ROOT . $imageModel->getImageList($product['id'])[0]['link'] . '" class="lazy " /></a>';
+                                        echo '<div class="title_product"><a href="' . SCRIPT_ROOT . '/sanpham/' . $product['slug'] . '">' . $product['name'] . '</a></div>';
+                                        echo '<div class="price_product text-center">';
+                                        echo '<span class="price_product_main">' . number_format($product['price']) . ' <sup>đ</sup></span>';
+                                        echo '<span class="price_product_sale">' . number_format($product['price']/2) . ' <sup>đ</sup></span>';
+                                        echo '</div><div class="new_product text-center"><span style="color: red;">' . number_format($product['price']/2) . ' đ</span>&nbsp;<span>&nbsp;</span></div>';
+                                        echo '<div class="sale_products">Sale</div></div>';
+                                    } else{
+                                        echo '<div class="col-md-3 col-sm-4 col-xs-6">';
+                                        echo '<a href="' . SCRIPT_ROOT . '/sanpham/' . $product['slug'] . '"><img data-original="' . SCRIPT_ROOT . $imageModel->getImageList($product['id'])[0]['link'] . '" class="lazy " /></a>';
+                                        echo '<div class="title_product"><a href="' . SCRIPT_ROOT . '/sanpham/' . $product['slug'] . '">' . $product['name'] . '</a></div>';
+                                        echo '<div class="price_product text-center">';
+                                        echo '<span class="price_product_sale">' . number_format($product['price']) . ' <sup>đ</sup></span>';
+                                        echo '</div><div class="new_product text-center">&nbsp;<span>_new_&nbsp;</span></div></div>';
+                                    }
+                                }
+                                ?>
                             </div>
                         </div>
                         <div class="col-md-12 last_products">
@@ -289,16 +248,30 @@
 
                                 </div>
                                 <div id="phantrang" class="col-md-6 col-sm-6 text-right">
-                                    <ul class="list-inline">
-                                        <li><a href="https://ivymoda.com/danh-muc/hang-nam-moi-ve/3?hid_row=4&amp;dong_sp=&amp;nhom_sp=">Trang đầu</a></li>
-                                        <li><a href="javascript:void(0)">&laquo;</a></li>
-                                        <li><a href="javascript:void(0)" id="products_active_ts">1</a></li>
-                                        <li><a href="https://ivymoda.com/danh-muc/hang-nam-moi-ve/2?hid_row=4&amp;dong_sp=&amp;nhom_sp=">2</a></li>
-                                        <li><a href="https://ivymoda.com/danh-muc/hang-nam-moi-ve/3?hid_row=4&amp;dong_sp=&amp;nhom_sp=">3</a></li>
-                                        <li><a href="https://ivymoda.com/danh-muc/hang-nam-moi-ve/2?hid_row=4&amp;dong_sp=&amp;nhom_sp=">&raquo;</a></li>
-                                        <li><a href="https://ivymoda.com/danh-muc/hang-nam-moi-ve/3?hid_row=4&amp;dong_sp=&amp;nhom_sp=">Trang cuối</a></li>
-                                    </ul>
-
+                                    <?php
+                                    if ($total_pages > 1) {
+                                        echo '<ul class="list-inline">';
+                                        echo '<li><a href="' . SCRIPT_ROOT . '/danh-muc/' . $current_category['slug'] . '?page_no=1">Trang đầu</a></li>';
+                                        if ($page_no == 1) {
+                                            echo ' <li><a href="javascript:void(0)">&laquo;</a></li>';
+                                        } else {
+                                            echo ' <li><a href="' . SCRIPT_ROOT . '/danh-muc/' . $current_category['slug'] . '?page_no=' . ($page_no - 1) . '">&laquo;</a></li>';
+                                        }
+                                        for ($i = 1; $i <= $total_pages; $i++) {
+                                            if($page_no == $i)
+                                                echo '<li><a href="javascript:void(0)" id="products_active_ts">'.$i.'</a></li>';
+                                            else
+                                                echo '<li><a href="' . SCRIPT_ROOT . '/danh-muc/' . $current_category['slug'] . '?page_no='.$i.'">'.$i.'</a></li>';
+                                        }
+                                        if ($page_no == $total_pages) {
+                                            echo ' <li><a href="javascript:void(0)">&raquo;</a></li>';
+                                        } else {
+                                            echo ' <li><a href="' . SCRIPT_ROOT . '/danh-muc/' . $current_category['slug'] . '?page_no=' . ($page_no + 1) . '">&raquo;</a></li>';
+                                        }
+                                        echo '<li><a href="' . SCRIPT_ROOT . '/danh-muc/' . $current_category['slug'] . '?page_no=' . $total_pages . '">Trang cuối</a></li>';
+                                        echo '</ul>';
+                                    }
+                                    ?>
                                 </div>
                             </div>
                         </div>
