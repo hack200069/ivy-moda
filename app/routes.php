@@ -7,21 +7,25 @@ $router->get('/customer/register', 'AccountController@register');
 $router->post('/customer/register', 'AccountController@submitRegister');
 $router->get('/customer/logout', 'AccountController@logout');
 
-// Cbi lam
+// Begin:1
 $router->get('/customer/info', 'AccountController@info');//V
 $router->get('/customer/info_edit', 'AccountController@info_edit');// da co view
 $router->post('/customer/info_edit', 'AccountController@info_edit_submit');
 $router->get('/customer/address_list', 'AccountController@address_list');//V
 $router->get('/customer/address_edit', 'AccountController@address_edit');//V post
 $router->post('/customer/address_edit', 'AccountController@address_edit_submit');
+// End:1
+// Begin:3
 $router->get('/customer/order_list', 'AccountController@order_list');// da co view can fill data
+// End:3
+// Begin:2
 $router->post('/cart/add_item', 'CartController@add_item');
 $router->post('/cart/drop_item', 'CartController@drop_item');
-$router->get('/thanhtoan/giohang', 'AccountController@cart');
-$router->get('/thanhtoan/dathang_step1', 'OrderController@dathang_step1');
-$router->get('/thanhtoan/dathang_step2', 'OrderController@dathang_step2');
+$router->get('/thanhtoan/giohang', 'CartController@cart');// da co view
+$router->get('/thanhtoan/dathang_step1', 'OrderController@dathang_step1');// da co view
+$router->get('/thanhtoan/dathang_step2', 'OrderController@dathang_step2');// da co view
 $router->get('/thanhtoan/dathang_step3', 'OrderController@dathang_step3');// da co view
-
+// End:2
 $router->get('/danh-muc/{slug}', 'CategoryController@detail');
 $router->get('/tim-kiem', 'ProductController@search');
 $router->get('/sale/{slug}', 'CategoryController@sale');
@@ -44,11 +48,12 @@ $router->get('/lien-he', 'ContactController@index');
 
 // Admin
 $router->get('/admin', 'AdminController@index');
-// Cbi lam
+// Begin:4
 $router->get('/admin/order', 'OrderController@index');
 $router->get('/admin/order/confirm', 'OrderController@confirm');
 $router->get('/admin/order/complete', 'OrderController@complete');
 $router->get('/admin/order/cancel', 'OrderController@cancel');
+// End:4
 
 $router->get('/admin/customer', 'AccountController@customer');
 $router->get('/admin/customer/block/{id}', 'AccountController@blockCustomer');

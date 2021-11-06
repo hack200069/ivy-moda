@@ -33,18 +33,12 @@
             </div>
             <div class="col-md-10 col-sm-9 col-xs-12 clearfix">
                 <ul class="nav nav-tabs">
-                    <li class="active"><a data-toggle="tab" href="#tao_don_hang">Đặt hàng thành công (0)</a></li>
-                    <li class=""><a data-toggle="tab" href="#dang_xu_ly">Đang xử lý (1)</a></li>
-                    <li class=""><a data-toggle="tab" href="#cho_giao_van">Chờ giao vận (0)</a></li>
-                    <li class=""><a data-toggle="tab" href="#dang_van_chuyen">Đã gửi (0)</a></li>
+                    <li class="active"><a data-toggle="tab" href="#dang_xu_ly">Đang xử lý (1)</a></li>
+                    <li class=""><a data-toggle="tab" href="#da_xac_nhan">Đã xác nhận (0)</a></li>
                     <li class=""><a data-toggle="tab" href="#da_nhan_hang">Đã nhận hàng (0)</a></li>
                     <li class=""><a data-toggle="tab" href="#da_huy">Đã hủy (0)</a></li>
-                    <li class=""><a data-toggle="tab" href="#da_tra_hang">Trả hàng (0)</a></li>
-                    <!--<li><a data-toggle="tab" href="#tab_ch">Đơn hàng mua tại cửa hàng</a></li>-->
                 </ul>
                 <div class="tab-content">
-                    <div id="tao_don_hang" class="tab-pane fade in active">
-                    </div>
                     <div id="dang_xu_ly" class="tab-pane fade in ">
                         <div class="row" style="padding-top: 10px">
                             <div class="col-md-12">
@@ -88,22 +82,13 @@
                             </div>
                         </div>
                     </div>
-                    <div id="cho_giao_van" class="tab-pane fade in ">
-                    </div>
-                    <div id="dang_van_chuyen" class="tab-pane fade in ">
+                    <div id="da_xac_nhan" class="tab-pane fade in ">
                     </div>
                     <div id="da_nhan_hang" class="tab-pane fade in ">
                     </div>
                     <div id="da_huy" class="tab-pane fade in ">
                     </div>
-                    <div id="da_tra_hang" class="tab-pane fade in ">
-                    </div>
-
-                    <div id="tab_ch" class="tab-pane fade">
-                    </div>
                 </div>
-
-
             </div>
         </div>
     </div>

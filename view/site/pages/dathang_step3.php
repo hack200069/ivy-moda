@@ -39,3 +39,6 @@
         <div class="col-md-12"></div>
     </div>
 </div>
+<script>
+    document.title = "Đặt hàng thành công | IVY moda";
+</script>

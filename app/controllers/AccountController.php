@@ -161,6 +161,14 @@ class AccountController
         }
     }
 
+    public function info_edit_submit(){
+
+    }
+
+    public function address_edit_submit(){
+
+    }
+
     public function submitLogin()
     {
         $userModel = new Model_User();
