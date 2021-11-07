@@ -21,11 +21,12 @@ class AdminController
                 $total_order = $orderModel->getTotalOrder();
                 $total_customer = $userModel->getTotalCustomer();
                 $total_news = $newsModel->getTotalNews();
+                $_SESSION['total_non_confirm_order'] = $orderModel->getTotalNonConfirmOrder();
                 include_once('view/admin/layouts/header.php');
                 include_once('view/admin/pages/home.php');
                 include_once('view/admin/layouts/footer.php');
                 return;
-            }else{
+            } else {
                 return header('Location: ' . SCRIPT_ROOT . '/');
             }
         } else {

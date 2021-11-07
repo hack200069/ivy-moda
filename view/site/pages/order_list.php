@@ -20,7 +20,7 @@
                         <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
                             <div class="panel-body">
                                 <div class="row">
-                                <ul class="nav" role="tablist">
+                                    <ul class="nav" role="tablist">
                                         <li role="presentation" class="active"><a href="<?= SCRIPT_ROOT ?>/customer/info" aria-controls="bangthongtintaikhoan">Bảng thông tin tài khoản</a></li>
                                         <li role="presentation" class=""><a href="<?= SCRIPT_ROOT ?>/customer/address_list" aria-controls="sodiachi">Địa chỉ nhận hàng</a></li>
                                         <li role="presentation" class=""><a href="<?= SCRIPT_ROOT ?>/customer/order_list" aria-controls="quanlydonhang">Quản lý đơn hàng</a></li>
@@ -33,63 +33,144 @@
             </div>
             <div class="col-md-10 col-sm-9 col-xs-12 clearfix">
                 <ul class="nav nav-tabs">
-                    <li class="active"><a data-toggle="tab" href="#dang_xu_ly">Đang xử lý (1)</a></li>
-                    <li class=""><a data-toggle="tab" href="#da_xac_nhan">Đã xác nhận (0)</a></li>
-                    <li class=""><a data-toggle="tab" href="#da_nhan_hang">Đã nhận hàng (0)</a></li>
-                    <li class=""><a data-toggle="tab" href="#da_huy">Đã hủy (0)</a></li>
+                    <li class="active"><a data-toggle="tab" href="#dang_xu_ly">Đang xử lý (<?= $total_non_confirm ?>)</a></li>
+                    <li class=""><a data-toggle="tab" href="#da_xac_nhan">Đã xác nhận (<?= $total_confirm ?>)</a></li>
+                    <li class=""><a data-toggle="tab" href="#da_nhan_hang">Đã nhận hàng (<?= $total_complete ?>)</a></li>
+                    <li class=""><a data-toggle="tab" href="#da_huy">Đã hủy (<?= $total_cancel ?>)</a></li>
                 </ul>
                 <div class="tab-content">
                     <div id="dang_xu_ly" class="tab-pane fade in ">
-                        <div class="row" style="padding-top: 10px">
-                            <div class="col-md-12">
-                                <table class="table table-hover table-condensed" id="my-orders-table">
-                                    <colgroup>
-                                        <col>
-                                        <col>
-                                        <col>
-                                        <col>
-                                        <col>
-                                    </colgroup>
-                                    <thead>
-                                        <tr class="first last">
-                                            <th>Mã đơn: </th>
-                                            <th>Ngày</th>
-                                            <th>Giao hàng tới</th>
-                                            <th><span class="nobr">Tổng cộng</span></th>
-                                            <th><span class="nobr">Trạng thái</span></th>
-                                        </tr>
-                                    </thead>
-                                    <tbody class="font12">
-                                        <tr class="first last odd">
-                                            <td><a href="https://ivymoda.com/customer/order_detail/ivm4219215" style="text-decoration: underline">IVM4219215</a></td>
-                                            <td><span class="nobr">06/11/2021</span></td>
-                                            <td>
-                                                dsada<br>
-                                                Bà Rịa Vũng Tàu<br>
-                                                Đất Đỏ<br>
-                                            </td>
-                                            <td><span class="price">630.000 ₫</span></td>
-                                            <td class="last">
-                                                <b>
-                                                    Đơn đang xử lý
-                                                </b>
-                                                <br>
-                                                <em><a href="javascript:;" class="but_order_cancel" data-invoice-no="ivm4219215" style="text-decoration: underline">Hủy đơn</a> </em>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                        <?php if ($total_non_confirm > 0) : ?>
+                            <div class="row" style="padding-top: 10px">
+                                <div class="col-md-12">
+                                    <table class="table table-hover table-condensed" id="my-orders-table">
+                                        <thead>
+                                            <tr class="first last">
+                                                <th>Mã đơn: </th>
+                                                <th><span class="nobr">Tổng cộng</span></th>
+                                                <th><span class="nobr">Trạng thái</span></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="font12">
+                                            <?php
+                                            foreach ($list_non_confirm as $order) {
+                                                echo '<tr class="first last odd">';
+                                                echo '<td>'.$order[0].'</td>';
+                                                echo '<td><span class="price">'.number_format($order['total']).' ₫</span></td>';
+                                                echo '<td class="last"><b>Đơn đang xử lý</b><br>';
+                                                echo '<em><a href="'.SCRIPT_ROOT.'/customer/order_cancel/'.$order[0].'" class="cancelOrder" style="text-decoration: underline">Hủy đơn</a> </em>';
+                                                echo '</td>';
+                                                echo '</tr>';
+                                            }
+                                            ?>
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
-                        </div>
+                        <?php endif ?>
                     </div>
                     <div id="da_xac_nhan" class="tab-pane fade in ">
+                        <?php if ($total_confirm > 0) : ?>
+                            <div class="row" style="padding-top: 10px">
+                                <div class="col-md-12">
+                                    <table class="table table-hover table-condensed" id="my-orders-table">
+                                        <thead>
+                                            <tr class="first last">
+                                                <th>Mã đơn: </th>
+                                                <th><span class="nobr">Tổng cộng</span></th>
+                                                <th><span class="nobr">Trạng thái</span></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="font12">
+                                            <?php
+                                            foreach ($list_confirm as $order) {
+                                                echo '<tr class="first last odd">';
+                                                echo '<td>'.$order[0].'</td>';
+                                                echo '<td><span class="price">'.number_format($order['total']).' ₫</span></td>';
+                                                echo '<td class="last"><b>Đơn đang đang gửi đến bạn</b><br>';
+                                                echo '</td>';
+                                                echo '</tr>';
+                                            }
+                                            ?>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        <?php endif ?>
                     </div>
                     <div id="da_nhan_hang" class="tab-pane fade in ">
+                        <?php if ($total_complete > 0) : ?>
+                            <div class="row" style="padding-top: 10px">
+                                <div class="col-md-12">
+                                    <table class="table table-hover table-condensed" id="my-orders-table">
+                                        <thead>
+                                            <tr class="first last">
+                                                <th>Mã đơn: </th>
+                                                <th><span class="nobr">Tổng cộng</span></th>
+                                                <th><span class="nobr">Trạng thái</span></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="font12">
+                                            <?php
+                                            foreach ($list_complete as $order) {
+                                                echo '<tr class="first last odd">';
+                                                echo '<td>'.$order[0].'</td>';
+                                                echo '<td><span class="price">'.number_format($order['total']).' ₫</span></td>';
+                                                echo '<td class="last"><b>Đơn hàng đã gửi đến bạn</b><br>';
+                                                echo '</td>';
+                                                echo '</tr>';
+                                            }
+                                            ?>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        <?php endif ?>
                     </div>
                     <div id="da_huy" class="tab-pane fade in ">
+                        <?php if ($total_cancel > 0) : ?>
+                            <div class="row" style="padding-top: 10px">
+                                <div class="col-md-12">
+                                    <table class="table table-hover table-condensed" id="my-orders-table">
+                                        <thead>
+                                            <tr class="first last">
+                                                <th>Mã đơn: </th>
+                                                <th><span class="nobr">Tổng cộng</span></th>
+                                                <th><span class="nobr">Trạng thái</span></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="font12">
+                                            <?php
+                                            foreach ($list_cancel as $order) {
+                                                echo '<tr class="first last odd">';
+                                                echo '<td>'.$order[0].'</td>';
+                                                echo '<td><span class="price">'.number_format($order['total']).' ₫</span></td>';
+                                                echo '<td class="last"><b>Đơn hàng đã hủy</b><br>';
+                                                echo '</td>';
+                                                echo '</tr>';
+                                            }
+                                            ?>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        <?php endif ?>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+<script>
+    document.title = "Danh sách đơn hàng | IVY moda";
+</script>
+<script>
+    var cancelElements = document.querySelectorAll('.cancelOrder');
+    for (var i = 0; i < cancelElements.length; i++) {
+        cancelElements[i].addEventListener('click', function(e) {
+            if (!confirm("Bạn có chắc chắn muốn hủy đơn hàng này?")) {
+                e.preventDefault();
+            }
+        });
+    }
+</script>

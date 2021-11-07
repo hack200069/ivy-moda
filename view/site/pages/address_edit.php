@@ -1,8 +1,44 @@
-<form enctype="application/x-www-form-urlencoded" name="frm_register" method="post" action="">
+<form name="frm_register" method="post">
     <div id="infouser" class="row title_h3">
         <div class="container">
             <h3> Cập nhật địa chỉ nhận hàng
             </h3>
+            <?php
+        if (!empty($_SESSION['register_error'])) {
+            echo '<div class="alert alert-danger alert-dismissable" style="margin-bottom: 10px; margin-top: 10px;">
+            <a href="javascript:void(0)" class="close" data-dismiss="alert" aria-label="close">×</a>';
+            if (isset($_SESSION['register_error']['phone'])) {
+                echo '<strong>Lỗi!</strong> ' . $_SESSION['register_error']['phone'] . '<br>';
+                unset($_SESSION['register_error']['phone']);
+            }
+            if (isset($_SESSION['register_error']['city'])) {
+                echo '<strong>Lỗi!</strong> ' . $_SESSION['register_error']['city'] . '<br>';
+                unset($_SESSION['register_error']['city']);
+            }
+            if (isset($_SESSION['register_error']['district'])) {
+                echo '<strong>Lỗi!</strong> ' . $_SESSION['register_error']['district'] . '<br>';
+                unset($_SESSION['register_error']['district']);
+            }
+            if (isset($_SESSION['register_error']['ward'])) {
+                echo '<strong>Lỗi!</strong> ' . $_SESSION['register_error']['ward'] . '<br>';
+                unset($_SESSION['register_error']['ward']);
+            }
+            if (isset($_SESSION['register_error']['address'])) {
+                echo '<strong>Lỗi!</strong> ' . $_SESSION['register_error']['address'] . '<br>';
+                unset($_SESSION['register_error']['address']);
+            }
+            if (isset($_SESSION['register_error']['phone_exist'])) {
+                echo '<strong>Lỗi!</strong> ' . $_SESSION['register_error']['phone_exist'] . '<br>';
+                unset($_SESSION['register_error']['phone_exist']);
+            }
+            if (isset($_SESSION['register_error']['sthg_wrong'])) {
+                echo '<strong>Lỗi!</strong> ' . $_SESSION['register_error']['sthg_wrong'] . '<br>';
+                unset($_SESSION['register_error']['sthg_wrong']);
+            }
+            unset($_SESSION['register_error']);
+            echo '</div>';
+        }
+        ?>
             <div class="row">
                 <div class="col-md-2 col-sm-3 col-xs-12">
                     <div class="row">
@@ -27,26 +63,23 @@
                         <li>
                             <div class="form-group two-fields">
                                 <label for="phone">Điện thoại</label><em class="required">*</em>
-                                <input type="text" value="<?= $_SESSION['user']['phone'] ?>" name="phone" id="phone" class="form-control" placeholder="Điện thoại">
+                                <input type="text" value="<?= $_SESSION['user']['phone'] ?>" name="phone" id="phone" class="form-control" placeholder="Điện thoại" required>
                             </div>
                             <div class="form-group two-fields">
                                 <label for="city">Tỉnh/Tp</label><em class="required">*</em>
-                                <select name="city" class="form-control" id="city">
-
+                                <select name="city" class="form-control" id="city" required>
                                 </select>
                             </div>
                         </li>
                         <li>
                             <div class="form-group two-fields">
                                 <label for="district">Quận/Huyện</label><em class="required">*</em>
-                                <select name="district" class="form-control" id="district">
-
+                                <select name="district" class="form-control" id="district" required>
                                 </select>
                             </div>
                             <div class="form-group two-fields">
                                 <label for="ward">Phường/Xã</label><em class="required">*</em>
-                                <select name="ward" class="form-control" id="ward">
-
+                                <select name="ward" class="form-control" id="ward" required>
                                 </select>
                             </div>
                         </li>
@@ -54,7 +87,7 @@
                         <li>
                             <div class="form-group one-fields">
                                 <label>Thông tin địa chỉ</label>
-                                <p><textarea name="address" class="check_required" style="height: 80px;" name="address"><?= $_SESSION['user']['address'] ?></textarea></p>
+                                <p><textarea name="address" class="check_required" style="height: 80px;" name="address" required><?= $_SESSION['user']['address'] ?></textarea></p>
                             </div>
                         </li>
                     </ul>

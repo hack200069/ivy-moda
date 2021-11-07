@@ -23,4 +23,13 @@ class Model_Image
         }
         return $list;
     }
+    public function getAllImage(){
+        $sql = "SELECT * FROM images";
+        $result = $this->db->conn->query($sql);
+        $list = array();
+        while($data = $result->fetch_array()) {
+            $list[] = $data;
+        }
+        return $list;
+    }
 }

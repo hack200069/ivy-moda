@@ -14,6 +14,7 @@ spl_autoload_register(function (string $class_name) {
 $router = new Core\Http\Route();
 $init = new App\Controllers\InitController();
 define('CATEGORY', $init->initCategory());
+define('IMAGE', $init->initImage());
 include_once(PATH_ROOT . '/app/routes.php');
 $request_url = !empty($_GET['url']) ? '/' . $_GET['url'] : '/';
 $method_url = !empty($_SERVER['REQUEST_METHOD']) ? $_SERVER['REQUEST_METHOD'] : 'GET';

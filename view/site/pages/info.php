@@ -1,6 +1,15 @@
 <div id="infouser" class="row title_h3">
     <div class="container">
         <h3>Thông tin khách hàng</h3>
+        <?php
+        if (isset($_SESSION['register_success'])) {
+            echo '<div class="alert alert-success alert-dismissable" style="margin-bottom: 10px; margin-top: 10px;">
+            <a href="javascript:void(0)" class="close" data-dismiss="alert" aria-label="close">×</a>
+            <strong>Thay đổi thông tin thành công!</strong><br>
+            </div>';
+            unset($_SESSION['register_success']);
+        } 
+        ?>
         <div class="row">
             <div class="col-md-2 col-sm-3 col-xs-12">
                 <div class="row">

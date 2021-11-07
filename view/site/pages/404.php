@@ -6,7 +6,7 @@
 			</div>
 			<div class="col-md-7 text-center">
 				Xin lỗi bạn, chúng tôi không thể tìm kiếm được trang web bạn yêu cầu hoặc có gì đó đã sai...
-				<p>Bạn vui lòng nhập lại tìm kiếm hoặc trở lại <a href="https://ivymoda.com/">Trang chủ</a>!</p>
+				<p>Bạn vui lòng nhập lại tìm kiếm hoặc trở lại <a href="<?=SCRIPT_ROOT?>">Trang chủ</a>!</p>
 				<div class="input-group">
 					<input type="text" class="form-control" name="q" placeholder="Tìm kiếm...">
 					<span class="input-group-btn">

@@ -8,6 +8,9 @@ use App\Models\Database;
 class Model_User
 {
 	protected $db;
+	private $options = [
+		'cost' => 12,
+	];
 	public function __construct()
 	{
 		$this->db = new Database();
@@ -26,16 +29,41 @@ class Model_User
 		$role = CLIENT;
 		$myDateTime = \DateTime::createFromFormat('d/m/Y', $userEntity->dob);
 		$dob = $myDateTime->format('Y-m-d');
-		$options = [
-			'cost' => 12,
-		];
-		$password_hash = password_hash($userEntity->password, PASSWORD_BCRYPT, $options);
+		$password_hash = password_hash($userEntity->password, PASSWORD_BCRYPT, $this->options);
 
 		$sql = "INSERT INTO users (email, password, first_name, last_name, phone, dob, gender, city, district, ward, address, role)
 							VALUES ('$userEntity->email', '$password_hash', '$userEntity->first_name', '$userEntity->last_name', '$userEntity->phone'
                             , '$dob', '$userEntity->gender', '$userEntity->city', '$userEntity->district', '$userEntity->ward', '$userEntity->address', '$role')";
 		$result = $this->db->conn->query($sql);
 		return $result;
+	}
+
+	public function updateInfoUser(Entity_User $userEntity){
+		$id = $_SESSION['user']['id'];
+		$myDateTime = \DateTime::createFromFormat('d/m/Y', $userEntity->dob);
+		$dob = $myDateTime->format('Y-m-d');
+		$password_hash = password_hash($userEntity->password, PASSWORD_BCRYPT, $this->options);
+		$sql = "UPDATE users SET email = '$userEntity->email',
+                                      first_name = '$userEntity->first_name',
+                                      last_name = '$userEntity->last_name',
+									  password = '$password_hash',
+									  dob = '$dob',
+									  gender = $userEntity->gender
+                                      WHERE id = $id";
+        $result = $this->db->conn->query($sql);
+        return $result;
+	}
+
+	public function updateAddressUser(Entity_User $userEntity){
+		$id = $_SESSION['user']['id'];
+		$sql = "UPDATE users SET city = $userEntity->city,
+								district = $userEntity->district,
+								ward = $userEntity->ward,
+								address = '$userEntity->address',
+								phone = '$userEntity->phone'
+                                WHERE id = $id";
+        $result = $this->db->conn->query($sql);
+        return $result;
 	}
 
 	public function checkExistEmail($email)

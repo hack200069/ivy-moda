@@ -1,6 +1,3 @@
-<script src="https://pubcdn.ivymoda.com/js/qrcode.js" type="text/javascript"></script>
-<script src="https://pubcdn.ivymoda.com/js/jquery-barcode.js" type="text/javascript"></script>
-<meta notranslate name="robots" content="noindex,follow" />
 <div id="product_detail" class="row">
     <div class="container">
         <div class="row">
@@ -9,41 +6,48 @@
                 <div class="box cf">
                     <div class="left">
                         <span class="demowrap">
-                            <img id="demo4" src="<?= SCRIPT_ROOT.$images[0]['link'] ?>" />
+                            <img id="demo4" src="<?= SCRIPT_ROOT . $images[0]['link'] ?>" />
                         </span>
 
                         <ul id="demo4carousel" class="elastislide-list">
                             <?php
-                                foreach($images as $img){
-                                    echo '<li><a href="javascript:void(0)"><img src="'.SCRIPT_ROOT.$img['link'].'" data-largeimg="'.SCRIPT_ROOT.$img['link'].'" /></a></li>';
-                                }
+                            foreach ($images as $img) {
+                                echo '<li><a href="javascript:void(0)"><img src="' . SCRIPT_ROOT . $img['link'] . '" data-largeimg="' . SCRIPT_ROOT . $img['link'] . '" /></a></li>';
+                            }
                             ?>
                         </ul>
 
                     </div>
                     <div class="right">
                         <h1 class="cat_h1"><?= $current_product['name'] ?></h1>
-                        <p class="ID_productDetail">MSP: <?= substr($current_product['name'], strrpos($current_product['name']," ")) ?></p>
-                        <p class="price_productDetail">
-                            <span class="price_productDetail_main"><small id="display_price_org"><?= number_format($current_product['price']); ?></small><sup>đ</sup></span>
-                            <br><span class="price_coupon_display"></span>
-                        </p>
-                        <form name="frm_product_sub" id="frm_product_sub" enctype="application/x-www-form-urlencoded" action="https://ivymoda.com/thanhtoan/giohang" method="post">
+                        <p class="ID_productDetail">MSP: <?= substr($current_product['name'], strrpos($current_product['name'], " ")) ?></p>
+                        <?php
+                        if ($current_product['discount_fifty_percent'] == 0) {
+                            echo '<p class="price_productDetail">';
+                            echo '<span class="price_productDetail_sale"><small id="display_price_org">'.number_format($current_product['price']).'</small><sup>đ</sup></span>';
+                            echo '<span class="price_productDetail_main"><small id="display_price_sale">'.number_format($current_product['price']/2).'</small><sup>đ</sup></span>';
+                            echo '<br><span class="price_coupon_display">'.number_format($current_product['price']/2).' đ </span>';
+                            echo '</p>';
+                        } else {
+                            echo '<p class="price_productDetail">';
+                            echo '<span class="price_productDetail_main"><small id="display_price_org">' . number_format($current_product['price']) . '</small><sup>đ</sup></span>';
+                            echo '<br><span class="price_coupon_display"></span>';
+                            echo '</p>';
+                        }
+                        ?>
+                        <form name="frm_product_sub" id="frm_product_sub" action="<?= SCRIPT_ROOT ?>/cart/add_item" method="post">
+                            <input type="hidden" name="id" value="<?= $current_product['id'] ?>">
                             <p class="value_poductDetail">
-                                <span>Số lượng: </span><input name="product_sub_quantity" type="text" value="1" size="1" />
-                            </p>
-                            <p class="hiddents_poductDetail">
-                                <span class="vuilongchon"></span></span>
+                                <span>Số lượng: </span><input name="quantity" type="text" value="1" />
                             </p>
                             <p class="button_poductDetail">
-                                <button style="display:none" type="button" id="but_choose_product_clear" class="" data-product-sub-id="" data-product-sub-status=""><i class="fa fa-shopping-basket" aria-hidden="true"></i> Hết hàng</button>
-                                <button style="display:block" type="button" id="but_choose_product" class="" data-product-sub-id="" data-product-sub-status=""><i class="fa fa-shopping-basket" aria-hidden="true"></i> Mua hàng</button>
+                                <?php
+                                if ($current_product['quantity'] <= 0) {
+                                    echo '<button style="display:block" type="button" id="but_choose_product_clear" class="" data-product-sub-id="" data-product-sub-status=""><i class="fa fa-shopping-basket" aria-hidden="true"></i> Hết hàng</button>';
+                                } else {
+                                    echo '<button style="display:block" type="submit" id="but_choose_product" class="" data-product-sub-id="" data-product-sub-status=""><i class="fa fa-shopping-basket" aria-hidden="true"></i> Mua hàng</button>';
+                                } ?>
                             </p>
-                            <input type="hidden" name="hid_link_sp" id="hid_link_sp" value="https://ivymoda.com/sanpham/quan-lung-vai-phoi-soi-tencel-ms-21e3001-29419">
-                            <input type="hidden" value="" name="hid_product_sub_id" id="hid_product_sub_id">
-                            <input type="hidden" value="21E3001" name="hid_product_key" id="hid_product_key">
-                            <input type="hidden" value="" name="hid_size_text" id="hid_size_text">
-                            <input type="hidden" value="" name="hid_color_text" id="hid_color_text">
                         </form>
 
                         <ul class="list-inline phone_chat_mail">
@@ -125,25 +129,6 @@
                             </li>
                         </ul>
                         <div class="clearfix"></div>
-                        <!-- qrcode, barcode -->
-                        <div class="bar_QA">
-                            <!-- data-toggle="modal" data-target="#img_1" -->
-                            <span style="margin-right: 15px;" id="box_qrcode">
-                                <img title="click để lấy mã qr code" id="myImg" src="https://pubcdn.ivymoda.com/images/qrcode2.png" alt="Mã qrcode cho sản phẩm 21E3001" width="50">
-                            </span>
-                            <div class="modal fade" id="img_1" role="dialog">
-                                <div class="modal-dialog" style="width: 350px">
-                                    <div class="modal-content">
-                                        <div class="modal-body text-center">
-                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                            <div id="qrcode"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Modal -->
-                        </div>
-                        <!-- end:qrcode, barcode -->
 
                         <hr />
                         <p class="productDetail_buttonShow">
@@ -421,12 +406,6 @@
     });
 
     $(document).ready(function() {
-        $("#barcode").barcode(product_key, "code39", {
-            barWidth: 1,
-            barHeight: 40,
-            showHRI: true,
-            moduleSize: 9
-        });
 
         $('#demo4carousel li').click(function() {
             var el = $(this);

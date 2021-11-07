@@ -290,7 +290,7 @@
         var htmls = '';
         if (password.value !== confirm_password.value) {
             errorAreaElement.style.display = 'block';
-            htmls += '<strong>Lỗi!</strong> Mật khẩu không giống nhau<br>';
+            htmls += '<strong>Lỗi!</strong> Mật khẩu và nhập lại mật khẩu không giống nhau<br>';
         } else if (password.value.length < 6 || password.value.length > 32) {
             errorAreaElement.style.display = 'block';
             htmls += '<strong>Lỗi!</strong> Vui lòng nhập mật khẩu độ dài từ 6 tới 32 ký tự<br>';

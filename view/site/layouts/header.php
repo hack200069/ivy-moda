@@ -266,9 +266,9 @@
                     <li>
                         <form action="<?= SCRIPT_ROOT ?>/tim-kiem" name="frm_search">
                             <div class="input-group">
-                                <input type="text" class="form-control" name="q" placeholder="tìm kiếm" title="tìm kiếm">
+                                <input type="text" class="form-control" name="q" placeholder="Tìm kiếm" title="Tìm kiếm">
                                 <span class="input-group-btn">
-                                    <button class="btn btn-default" type="submit" title="tìm kiếm"> <i class="fa fa-search" aria-hidden="true"></i></button>
+                                    <button class="btn btn-default" type="submit" title="Tìm kiếm"> <i class="fa fa-search" aria-hidden="true"></i></button>
                                 </span>
                             </div><!-- /input-group -->
                         </form>
@@ -277,7 +277,7 @@
                     if (isset($_SESSION['user'])) {
                         echo '
                             <li class="dropdown">
-                                <a class="dropdown-toggle" href="' . SCRIPT_ROOT . '/customer/info" title="Cập nhật tài khoản ' . $_SESSION['user']['first_name'] . ' ' . $_SESSION['user']['last_name'] . '">Tài khoản</a>
+                                <a class="dropdown-toggle" href="' . SCRIPT_ROOT . '/customer/info" title="Cập nhật tài khoản">' . $_SESSION['user']['first_name'] . ' ' . $_SESSION['user']['last_name'] . '</a>
                                 <ul class="dropdown-menu" style="width: 180px">
                                     ';
                         if ($_SESSION['user']['role'] == ADMIN) {
@@ -290,21 +290,48 @@
                                 </ul>
                             </li>
                             ';
+                        echo '<li class="dropdown">
+                                    <a href="' . SCRIPT_ROOT . '/thanhtoan/giohang">
+                                        <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+                                        <span>' . $_SESSION['cart_total_product'] . '</span>
+                                    </a>';
+                        if ($_SESSION['cart_total_product'] > 0) {
+                            echo '  <ul class="dropdown-menu" style="display: none;">
+                                        <h3 class="text-center"><a href="#" title="">Giỏ hàng</a></h3>';
+                            foreach ($_SESSION['cart_product'] as $product) {
+                                echo '<li>
+                                <ul class="list-inline clearfix">
+                                    <li class="col-md-3 col-sm-4"><a href="' . SCRIPT_ROOT . '/sanpham/' . $product['slug'] . '"><img src="' . SCRIPT_ROOT;
+                                foreach(IMAGE as $image){
+                                    if($image['product_id'] == $product['id']){
+                                        echo $image['link'];
+                                        break;
+                                    }
+                                }
+                                echo '"></a></li>
+                                    <li class="col-md-9 col-sm-8">
+                                        <div class="title_cartMain"><h5><a href="' . SCRIPT_ROOT . '/sanpham/' . $product['slug'] . '">' . $product['name'] . '</a></h5></div>
+                                        <div class="style_cartMain">
+                                            <b>Số lượng:</b> ' . $product[3] . '                                    
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>';
+                            }
+                            echo            '<li>
+                                            <a href="' . SCRIPT_ROOT . '/thanhtoan/giohang">...xem chi tiết</a>
+                                        </li>
+                                    </ul>';
+                        }
+                        echo '</li>';
                     } else {
                         echo '
-                            <li><a href="' . SCRIPT_ROOT . '/page/order_find" title="Tra cứu đơn hàng"><i class="fa fa-paw"></i></a></li>
                             <li>
                                 <a href="' . SCRIPT_ROOT . '/customer/login"><i class="fa fa-user" aria-hidden="true"></i></a></a>
                             </li>
                             ';
                     }
                     ?>
-                    <li class="dropdown">
-                        <a href="<?= SCRIPT_ROOT ?>/thanhtoan/giohang">
-                            <i class="fa fa-shopping-bag" aria-hidden="true"></i>
-                            <span></span>
-                        </a>
-                    </li>
                 </ul>
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
@@ -360,7 +387,6 @@
     <div id="nav_mobile">
         <a href="<?php echo SCRIPT_ROOT ?>"><?php echo '<img src="' . SCRIPT_ROOT . '/public/images/logo.png" />'; ?></a>
         <div class="cart_mobile">
-            <a href="<?= SCRIPT_ROOT ?>/page/order_find" title="Tra cứu đơn hàng"><i class="fa fa-paw"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
             <a href="<?= SCRIPT_ROOT ?>/thanhtoan/giohang"><i class="fa fa-shopping-bag" aria-hidden="true"></i><span> </span></a>
         </div>
         <!--MENU_VER-->
@@ -400,149 +426,149 @@
                         }
                         ?>
                         <li>
-                                <a href="javascript:void(0)" style="text-transform: uppercase"><b>Áo</b></a>
-                                <ul>
-                                    <?php
-                                    foreach (CATEGORY as $c) {
-                                        if ($c['for_object'] == 2) {
-                                            if ($c['parent_category'] == 6) {
-                                                echo '<li><a href="' . SCRIPT_ROOT . '/danh-muc/' . $c['slug'] . '">' . $c['name'] . '</a></li>';
-                                            }
+                            <a href="javascript:void(0)" style="text-transform: uppercase"><b>Áo</b></a>
+                            <ul>
+                                <?php
+                                foreach (CATEGORY as $c) {
+                                    if ($c['for_object'] == 2) {
+                                        if ($c['parent_category'] == 6) {
+                                            echo '<li><a href="' . SCRIPT_ROOT . '/danh-muc/' . $c['slug'] . '">' . $c['name'] . '</a></li>';
                                         }
-                                    }
-                                    ?>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)" style="text-transform: uppercase"><b>Quần nữ</b></a>
-                                <ul>
-                                    <?php
-                                    foreach (CATEGORY as $c) {
-                                        if ($c['for_object'] == 2) {
-                                            if ($c['parent_category'] == 7) {
-                                                echo '<li><a href="' . SCRIPT_ROOT . '/danh-muc/' . $c['slug'] . '">' . $c['name'] . '</a></li>';
-                                            }
-                                        }
-                                    }
-                                    ?>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)" style="text-transform: uppercase"><b>Đầm nữ</b></a>
-                                <ul>
-                                    <?php
-                                    foreach (CATEGORY as $c) {
-                                        if ($c['for_object'] == 2) {
-                                            if ($c['parent_category'] == 8) {
-                                                echo '<li><a href="' . SCRIPT_ROOT . '/danh-muc/' . $c['slug'] . '">' . $c['name'] . '</a></li>';
-                                            }
-                                        }
-                                    }
-                                    ?>
-                                </ul>
-                            </li>
-                            <?php
-                            foreach (CATEGORY as $c) {
-                                if ($c['for_object'] == 2) {
-                                    if ($c['parent_category'] == 9) {
-                                        echo '<li><a href="' . SCRIPT_ROOT . '/danh-muc/' . $c['slug'] . '">' . $c['name'] . '</a></li>';
                                     }
                                 }
+                                ?>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)" style="text-transform: uppercase"><b>Quần nữ</b></a>
+                            <ul>
+                                <?php
+                                foreach (CATEGORY as $c) {
+                                    if ($c['for_object'] == 2) {
+                                        if ($c['parent_category'] == 7) {
+                                            echo '<li><a href="' . SCRIPT_ROOT . '/danh-muc/' . $c['slug'] . '">' . $c['name'] . '</a></li>';
+                                        }
+                                    }
+                                }
+                                ?>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)" style="text-transform: uppercase"><b>Đầm nữ</b></a>
+                            <ul>
+                                <?php
+                                foreach (CATEGORY as $c) {
+                                    if ($c['for_object'] == 2) {
+                                        if ($c['parent_category'] == 8) {
+                                            echo '<li><a href="' . SCRIPT_ROOT . '/danh-muc/' . $c['slug'] . '">' . $c['name'] . '</a></li>';
+                                        }
+                                    }
+                                }
+                                ?>
+                            </ul>
+                        </li>
+                        <?php
+                        foreach (CATEGORY as $c) {
+                            if ($c['for_object'] == 2) {
+                                if ($c['parent_category'] == 9) {
+                                    echo '<li><a href="' . SCRIPT_ROOT . '/danh-muc/' . $c['slug'] . '">' . $c['name'] . '</a></li>';
+                                }
                             }
-                            ?>
+                        }
+                        ?>
                     </ul>
                     <li data-toggle="collapse" data-target="#cat_2" class="collapsed">
                         <a>Nam</a> <span class="arrow" data-toggle="collapse" data-target="#cat_2" class="collapsed"></span>
                     </li>
                     <ul class="sub-menu collapse" id="cat_2">
-                    <?php
-                            foreach (CATEGORY as $c) {
-                                if ($c['for_object'] == 1) {
-                                    if ($c['parent_category'] == 1) {
-                                        echo '<li><a href="' . SCRIPT_ROOT . '/danh-muc/' . $c['slug'] . '">' . $c['name'] . '</a></li>';
-                                    }
+                        <?php
+                        foreach (CATEGORY as $c) {
+                            if ($c['for_object'] == 1) {
+                                if ($c['parent_category'] == 1) {
+                                    echo '<li><a href="' . SCRIPT_ROOT . '/danh-muc/' . $c['slug'] . '">' . $c['name'] . '</a></li>';
                                 }
                             }
-                            ?>
-                            <li>
-                                <a href="javascript:void(0)" style="text-transform: uppercase"><b>&Aacute;o</b></a>
-                                <ul>
-                                    <?php
-                                    foreach (CATEGORY as $c) {
-                                        if ($c['for_object'] == 1) {
-                                            if ($c['parent_category'] == 2) {
-                                                echo '<li><a href="' . SCRIPT_ROOT . '/danh-muc/' . $c['slug'] . '">' . $c['name'] . '</a></li>';
-                                            }
+                        }
+                        ?>
+                        <li>
+                            <a href="javascript:void(0)" style="text-transform: uppercase"><b>&Aacute;o</b></a>
+                            <ul>
+                                <?php
+                                foreach (CATEGORY as $c) {
+                                    if ($c['for_object'] == 1) {
+                                        if ($c['parent_category'] == 2) {
+                                            echo '<li><a href="' . SCRIPT_ROOT . '/danh-muc/' . $c['slug'] . '">' . $c['name'] . '</a></li>';
                                         }
-                                    }
-                                    ?>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)" style="text-transform: uppercase"><b>Quần nam</b></a>
-                                <ul>
-                                    <?php
-                                    foreach (CATEGORY as $c) {
-                                        if ($c['for_object'] == 1) {
-                                            if ($c['parent_category'] == 3) {
-                                                echo '<li><a href="' . SCRIPT_ROOT . '/danh-muc/' . $c['slug'] . '">' . $c['name'] . '</a></li>';
-                                            }
-                                        }
-                                    }
-                                    ?>
-                                </ul>
-                            </li>
-                            <?php
-                            foreach (CATEGORY as $c) {
-                                if ($c['for_object'] == 1) {
-                                    if ($c['parent_category'] == 4) {
-                                        echo '<li><a href="' . SCRIPT_ROOT . '/danh-muc/' . $c['slug'] . '">' . $c['name'] . '</a></li>';
                                     }
                                 }
+                                ?>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)" style="text-transform: uppercase"><b>Quần nam</b></a>
+                            <ul>
+                                <?php
+                                foreach (CATEGORY as $c) {
+                                    if ($c['for_object'] == 1) {
+                                        if ($c['parent_category'] == 3) {
+                                            echo '<li><a href="' . SCRIPT_ROOT . '/danh-muc/' . $c['slug'] . '">' . $c['name'] . '</a></li>';
+                                        }
+                                    }
+                                }
+                                ?>
+                            </ul>
+                        </li>
+                        <?php
+                        foreach (CATEGORY as $c) {
+                            if ($c['for_object'] == 1) {
+                                if ($c['parent_category'] == 4) {
+                                    echo '<li><a href="' . SCRIPT_ROOT . '/danh-muc/' . $c['slug'] . '">' . $c['name'] . '</a></li>';
+                                }
                             }
-                            ?>
+                        }
+                        ?>
                     </ul>
                     <li data-toggle="collapse" data-target="#cat_3" class="collapsed">
                         <a>Trẻ em</a> <span class="arrow" data-toggle="collapse" data-target="#cat_3" class="collapsed"></span>
                     </li>
                     <ul class="sub-menu collapse" id="cat_3">
-                    <?php
-                            foreach (CATEGORY as $c) {
-                                if ($c['for_object'] == 3) {
-                                    if ($c['parent_category'] == 10) {
-                                        echo '<li><a href="' . SCRIPT_ROOT . '/danh-muc/' . $c['slug'] . '">' . $c['name'] . '</a></li>';
-                                    }
+                        <?php
+                        foreach (CATEGORY as $c) {
+                            if ($c['for_object'] == 3) {
+                                if ($c['parent_category'] == 10) {
+                                    echo '<li><a href="' . SCRIPT_ROOT . '/danh-muc/' . $c['slug'] . '">' . $c['name'] . '</a></li>';
                                 }
                             }
-                            ?>
-                            <li>
-                                <a href="javascript:void(0)" style="text-transform: uppercase"><b>Bé gái</b></a>
-                                <ul>
-                                    <?php
-                                    foreach (CATEGORY as $c) {
-                                        if ($c['for_object'] == 3) {
-                                            if ($c['parent_category'] == 11) {
-                                                echo '<li><a href="' . SCRIPT_ROOT . '/danh-muc/' . $c['slug'] . '">' . $c['name'] . '</a></li>';
-                                            }
+                        }
+                        ?>
+                        <li>
+                            <a href="javascript:void(0)" style="text-transform: uppercase"><b>Bé gái</b></a>
+                            <ul>
+                                <?php
+                                foreach (CATEGORY as $c) {
+                                    if ($c['for_object'] == 3) {
+                                        if ($c['parent_category'] == 11) {
+                                            echo '<li><a href="' . SCRIPT_ROOT . '/danh-muc/' . $c['slug'] . '">' . $c['name'] . '</a></li>';
                                         }
                                     }
-                                    ?>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)" style="text-transform: uppercase"><b>Bé trai</b></a>
-                                <ul>
-                                    <?php
-                                    foreach (CATEGORY as $c) {
-                                        if ($c['for_object'] == 3) {
-                                            if ($c['parent_category'] == 12) {
-                                                echo '<li><a href="' . SCRIPT_ROOT . '/danh-muc/' . $c['slug'] . '">' . $c['name'] . '</a></li>';
-                                            }
+                                }
+                                ?>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)" style="text-transform: uppercase"><b>Bé trai</b></a>
+                            <ul>
+                                <?php
+                                foreach (CATEGORY as $c) {
+                                    if ($c['for_object'] == 3) {
+                                        if ($c['parent_category'] == 12) {
+                                            echo '<li><a href="' . SCRIPT_ROOT . '/danh-muc/' . $c['slug'] . '">' . $c['name'] . '</a></li>';
                                         }
                                     }
-                                    ?>
-                                </ul>
-                            </li>
+                                }
+                                ?>
+                            </ul>
+                        </li>
                     </ul>
                     <li data-toggle="collapse" data-target="#cat_35" class="collapsed">
                         <a style="color:red !important;">Sale 50%++</a> <span class="arrow" data-toggle="collapse" data-target="#cat_35" class="collapsed"></span>

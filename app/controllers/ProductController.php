@@ -132,7 +132,6 @@ class ProductController
         if (isset($url_components['query'])) {
             parse_str($url_components['query'], $params);
         }
-        $productModel = new Model_Product();
         $page_no = 1;
         if (isset($params['page_no'])) {
             $page_no = $params['page_no'];

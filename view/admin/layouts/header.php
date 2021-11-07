@@ -87,7 +87,7 @@
                                 <i class="nav-icon fas fa-shopping-cart"></i>
                                 <p>
                                     Đơn hàng
-                                    <span class="badge badge-danger right">6</span>
+                                    <span class="badge badge-danger right"><?=$_SESSION['total_non_confirm_order'] > 0 ? $_SESSION['total_non_confirm_order'].' đơn chưa xử lý' : ''?></span>
                                 </p>
                             </a>
                         </li>
